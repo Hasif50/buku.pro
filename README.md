@@ -7,8 +7,8 @@ businesses.
   sales, operations). The main business product.
 - **myBuku** — personal finance for Malaysia (track spending, budget, save,
   invest, family money). The consumer product.
-- **DentalOS AI** — the first vertical use case: the AI operating system for
-  dental clinics (see `G:\dentalos-ai`).
+- **DentalOS AI** — a Bukubiz use case: the Finance, Marketing, Sales, and
+  Operations agents applied to dental clinics (see `G:\dentalos-ai`).
 
 ## Structure
 
