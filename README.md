@@ -39,9 +39,22 @@ Static site — deploy to Cloudflare Pages, Netlify, or Vercel:
 ```bash
 # Cloudflare Pages (from this directory)
 npx wrangler pages deploy . --project-name buku-pro
+# or
+.\deploy.ps1
 ```
 
 Then attach the `buku.pro` domain in the Pages custom domains tab.
+
+## Adding a vertical
+
+Each vertical is a page plus a card in the "Verticals" section of `index.html`.
+
+1. Copy `dentalos.html` to `<vertical>.html` and rewrite its copy.
+2. Add a nav link in the header of every page.
+3. Add a card in the "Verticals" section (copy the `product-card` block for
+   DentalOS AI and change the tag, title, copy, and link).
+4. When there are 2+ verticals, wrap the cards in a `<div class="split-grid">`
+   so they lay out side by side.
 
 ## Before launch
 
