@@ -93,6 +93,32 @@
     });
   }
 
+  // Live ledger feed — the book writes itself
+  var ledger = document.getElementById("ledgerLines");
+  if (ledger && !reduceMotion) {
+    var tasks = [
+      { agent: "finance", task: "reconciling invoices", chip: "done", cls: "done" },
+      { agent: "marketing", task: "drafting recall campaign", chip: "working", cls: "work" },
+      { agent: "operations", task: "checking inventory", chip: "queued", cls: "queue" },
+      { agent: "sales", task: "scheduling follow-ups", chip: "done", cls: "done" },
+      { agent: "hr", task: "updating staff records", chip: "working", cls: "work" },
+      { agent: "admin", task: "filing compliance reports", chip: "done", cls: "done" }
+    ];
+    var li = 0;
+    setInterval(function () {
+      var t = tasks[li++ % tasks.length];
+      var now = new Date();
+      var hh = ("0" + now.getHours()).slice(-2);
+      var mm = ("0" + now.getMinutes()).slice(-2);
+      var el = document.createElement("div");
+      el.className = "lline";
+      el.innerHTML = '<span class="t">' + hh + ":" + mm + '</span><span class="agent">' + t.agent +
+        '</span><span class="task">' + t.task + '</span><span class="chip ' + t.cls + '">' + t.chip + '</span>';
+      ledger.prepend(el);
+      while (ledger.children.length > 4) ledger.lastChild.remove();
+    }, 2400);
+  }
+
   targets.forEach(function (el) {
     observer.observe(el);
   });

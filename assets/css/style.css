@@ -202,9 +202,16 @@ img { max-width: 100%; display: block; }
 /* agent constellation */
 .constellation { width: 100%; max-width: 460px; height: auto; margin-left: auto; }
 .constellation .const-label { fill: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; }
-.constellation .nodes circle { animation: node-pulse 3.4s ease-in-out infinite; }
+.constellation .nodes circle {
+  animation: node-pulse 3.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
 .constellation .nodes circle:nth-child(2n) { animation-delay: 1.7s; }
-@keyframes node-pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
 
 /* screenshot slot */
 .preview { position: relative; padding: 8px; }
@@ -414,3 +421,41 @@ body::after {
 .constellation g line:nth-child(6) { animation-delay: 0.60s; }
 @keyframes draw-line { to { stroke-dashoffset: 0; } }
 @keyframes twinkle { 0%, 100% { opacity: 0.78; } 50% { opacity: 1; } }
+
+/* live ledger — the book writes itself */
+.ledger {
+  margin-top: 4px;
+  width: 100%;
+  max-width: 440px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+.ledger-head {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.13em; font-size: 0.64rem;
+  margin-bottom: 4px;
+}
+.live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green);
+  animation: live-ping 1.9s ease-out infinite;
+}
+@keyframes live-ping {
+  0% { box-shadow: 0 0 0 0 rgba(79, 209, 165, 0.55); }
+  100% { box-shadow: 0 0 0 9px rgba(79, 209, 165, 0); }
+}
+.ledger-lines { display: flex; flex-direction: column; }
+.lline {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-top: 1px solid var(--line);
+}
+.lline .t { color: var(--muted); }
+.lline .agent { color: var(--blue); font-weight: 600; }
+.lline .task { color: var(--muted); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lline .chip {
+  font-size: 0.62rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 2px 7px; border-radius: 999px; white-space: nowrap;
+}
+.chip.done { background: rgba(79, 209, 165, 0.14); color: var(--green); }
+.chip.work { background: rgba(212, 175, 55, 0.16); color: var(--accent); }
+.chip.queue { background: rgba(139, 147, 168, 0.14); color: var(--muted); }
