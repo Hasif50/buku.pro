@@ -29,6 +29,8 @@
   --accent-soft: rgba(212, 175, 55, 0.14);
   --blue: #6fa8dc;             /* starlight */
   --blue-soft: rgba(111, 168, 220, 0.14);
+  --green: #4fd1a5;            /* aurora — money in */
+  --red: #e0705a;              /* ember — warnings */
   --grad: linear-gradient(120deg, #e9c766 0%, #d4af37 45%, #f4dc8f 100%);
   --glow: rgba(212, 175, 55, 0.16);
   --radius: 18px;
@@ -176,7 +178,7 @@ img { max-width: 100%; display: block; }
 .hero { padding: 76px 0 88px; position: relative; overflow: hidden; }
 .hero::before {
   content: "";
-  position: absolute; inset: 0; pointer-events: none;
+  position: absolute; inset: 0; pointer-events: none; animation: twinkle 10s ease-in-out infinite;
   background:
     radial-gradient(720px 420px at 78% 12%, rgba(111, 168, 220, 0.10), transparent 62%),
     radial-gradient(560px 320px at 12% 88%, rgba(212, 175, 55, 0.09), transparent 62%),
@@ -292,7 +294,7 @@ img { max-width: 100%; display: block; }
   position: relative; overflow: hidden;
 }
 .cta-band::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
+  content: ""; position: absolute; inset: 0; pointer-events: none; animation: twinkle 10s ease-in-out infinite;
   background: radial-gradient(640px 280px at 82% 20%, rgba(212, 175, 55, 0.22), transparent 62%);
 }
 .cta-band h2 { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.01em; max-width: 520px; }
@@ -320,7 +322,7 @@ img { max-width: 100%; display: block; }
 /* page hero */
 .page-hero { padding: 72px 0 60px; position: relative; overflow: hidden; }
 .page-hero::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
+  content: ""; position: absolute; inset: 0; pointer-events: none; animation: twinkle 10s ease-in-out infinite;
   background:
     radial-gradient(680px 380px at 80% 10%, rgba(111, 168, 220, 0.09), transparent 60%),
     radial-gradient(520px 300px at 10% 90%, rgba(212, 175, 55, 0.08), transparent 60%),
@@ -376,6 +378,8 @@ img { max-width: 100%; display: block; }
   .ticker-track { animation: none; }
   .constellation .nodes circle { animation: none; }
   .grad { animation: none; }
+  .constellation g line { animation: none; stroke-dashoffset: 0; }
+  .hero::before, .page-hero::before { animation: none; }
 }
 
 /* ---------- final polish: vellum grain + gold shimmer ---------- */
@@ -396,3 +400,17 @@ body::after {
 @keyframes shimmer {
   to { background-position: 200% center; }
 }
+
+/* constellation draw-in — agents writing the ledger */
+.constellation g line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw-line 1.4s ease-out forwards;
+}
+.constellation g line:nth-child(2) { animation-delay: 0.12s; }
+.constellation g line:nth-child(3) { animation-delay: 0.24s; }
+.constellation g line:nth-child(4) { animation-delay: 0.36s; }
+.constellation g line:nth-child(5) { animation-delay: 0.48s; }
+.constellation g line:nth-child(6) { animation-delay: 0.60s; }
+@keyframes draw-line { to { stroke-dashoffset: 0; } }
+@keyframes twinkle { 0%, 100% { opacity: 0.78; } 50% { opacity: 1; } }
