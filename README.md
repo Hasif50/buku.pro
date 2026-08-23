@@ -34,16 +34,31 @@ CTA label per intent, and no em-dashes in copy.
 
 ## Deploy
 
-Static site — deploy to Cloudflare Pages, Netlify, or Vercel:
+Static site — free options, in order of preference.
+
+### GitHub Pages (recommended — git-native, free TLS)
+
+1. Create a GitHub repo and push:
+   ```bash
+   git remote add origin git@github.com:<you>/buku-pro.git
+   git push -u origin master
+   ```
+2. Repo → **Settings → Pages → Source: GitHub Actions** (the workflow in
+   `.github/workflows/pages.yml` deploys the root directory on every push).
+3. Custom domain: the `CNAME` file already contains `buku.pro`. In Pages →
+   Custom domain, confirm it, then in your DNS add GitHub's Pages records:
+   - 4 × `A` records → `185.199.108.153`, `185.199.109.153`,
+     `185.199.110.153`, `185.199.111.153` (apex `buku.pro`)
+   - `CNAME www` → `<you>.github.io` (optional)
+
+### Cloudflare Pages (alternative — unlimited bandwidth)
 
 ```bash
-# Cloudflare Pages (from this directory)
-npx wrangler pages deploy . --project-name buku-pro
-# or
-.\deploy.ps1
+npx wrangler login          # once
+.\deploy.ps1                # deploys to Cloudflare Pages
 ```
 
-Then attach the `buku.pro` domain in the Pages custom domains tab.
+Then attach `buku.pro` in the Pages custom domains tab.
 
 ## Adding a vertical
 
