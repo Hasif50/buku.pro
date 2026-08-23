@@ -37,6 +37,14 @@
     {threshold: 0.12}
   );
 
+  // Stagger the reveal inside grids (features, product cards)
+  document.querySelectorAll(".features, .split-grid").forEach(function (grid) {
+    Array.prototype.slice.call(grid.children).forEach(function (child, i) {
+      var el = child.classList.contains("reveal") ? child : child.querySelector(".reveal");
+      if (el) el.style.transitionDelay = (i * 70) + "ms";
+    });
+  });
+
   targets.forEach(function (el) {
     observer.observe(el);
   });
