@@ -1,19 +1,23 @@
 # buku.pro
 
-Marketing site for **buku.pro**, the home of two products:
+Marketing site for **buku.pro**, the platform for AI agentic services for
+businesses.
 
+- **Bukubiz** — AI agents for every business department (finance, marketing,
+  sales, operations). The main business product.
 - **myBuku** — personal finance for Malaysia (track spending, budget, save,
-  invest, family money).
-- **Bukubiz** — business finance for Malaysian SMEs (expenses, invoicing, cash
-  flow, team access).
+  invest, family money). The consumer product.
+- **DentalOS AI** — the first vertical use case: the AI operating system for
+  dental clinics (see `G:\dentalos-ai`).
 
 ## Structure
 
 ```
 buku-pro/
-├── index.html          # home — hero, product split, features, CTA
-├── mybuku.html         # myBuku product page
-├── bukubiz.html        # Bukubiz product page
+├── index.html          # home — hero, product split, use case, features, CTA
+├── mybuku.html         # myBuku (personal) product page
+├── bukubiz.html        # Bukubiz (business AI agents) product page
+├── dentalos.html       # DentalOS AI use-case page
 ├── assets/
 │   ├── css/style.css   # shared stylesheet
 │   ├── js/main.js      # nav toggle + restrained scroll reveal
