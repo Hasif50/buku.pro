@@ -61,6 +61,25 @@
     }, { passive: true });
   }
 
+  // Cursor glow (desktop, fine pointer only)
+  if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    var glow = document.createElement("div");
+    glow.className = "cursor-glow";
+    document.body.appendChild(glow);
+    var tx = 0, ty = 0, gx = 0, gy = 0, raf = 0;
+    window.addEventListener("mousemove", function (e) {
+      tx = e.clientX; ty = e.clientY;
+      if (!raf) {
+        raf = requestAnimationFrame(function () {
+          gx += (tx - gx) * 0.16;
+          gy += (ty - gy) * 0.16;
+          glow.style.transform = "translate(" + gx + "px," + gy + "px) translate(-50%, -50%)";
+          raf = 0;
+        });
+      }
+    }, { passive: true });
+  }
+
   targets.forEach(function (el) {
     observer.observe(el);
   });

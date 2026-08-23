@@ -6,14 +6,14 @@
   <title>buku.pro — AI agents for business</title>
   <meta name="description" content="buku.pro builds AI agents for the work behind every business. Finance, marketing, sales, and operations, handled for you.">
   <meta name="theme-color" content="#0b6bcb">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230fc2c0'/%3E%3Cpath d='M16 8 C13.5 6.6 10 6 6.5 6 L6.5 24 C10 24 13.5 24.6 16 26 C18.5 24.6 22 24 25.5 24 L25.5 6 C22 6 18.5 6.6 16 8 Z' fill='none' stroke='%230a0f1e' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 8 L16 26' stroke='%230a0f1e' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d4af37'/%3E%3Cpath d='M16 8 C13.5 6.6 10 6 6.5 6 L6.5 24 C10 24 13.5 24.6 16 26 C18.5 24.6 22 24 25.5 24 L25.5 6 C22 6 18.5 6.6 16 8 Z' fill='none' stroke='%230b0f1e' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 8 L16 26' stroke='%230b0f1e' stroke-width='2'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html">
-        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#111a2e" stroke="#1c2740"/><path d="M24 12 C20.5 9.9 15.5 9 10.5 9 L10.5 34 C15.5 34 20.5 34.8 24 37 C27.5 34.8 32.5 34 37.5 34 L37.5 9 C32.5 9 27.5 9.9 24 12 Z" fill="none" stroke="#0fc2c0" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 12 L24 37" stroke="#0fc2c0" stroke-width="2.6"/></svg>
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#131a2e" stroke="#232b40"/><path d="M24 12 C20.5 9.9 15.5 9 10.5 9 L10.5 34 C15.5 34 20.5 34.8 24 37 C27.5 34.8 32.5 34 37.5 34 L37.5 9 C32.5 9 27.5 9.9 24 12 Z" fill="none" stroke="#d4af37" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 12 L24 37" stroke="#d4af37" stroke-width="2.6"/></svg>
         <span>buku.pro</span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
@@ -45,11 +45,32 @@
           </div>
         </div>
 
-        <div class="preview reveal" aria-label="Bukubiz agents preview">
-          <div class="preview-card preview-shot">
-            <img src="assets/screenshots/bukubiz-agents.png" alt="Bukubiz agents dashboard" onerror="this.onerror=null;this.src='assets/screenshots/placeholder.svg'">
-          </div>
-        </div>
+        <svg class="constellation reveal" viewBox="0 0 440 440" aria-hidden="true">
+          <circle cx="220" cy="220" r="7" fill="#d4af37"/>
+          <circle cx="220" cy="220" r="17" fill="none" stroke="rgba(212,175,55,0.35)" stroke-width="1"/>
+          <g stroke="rgba(111,168,220,0.28)" stroke-width="1">
+            <line x1="220" y1="220" x2="220" y2="82"/>
+            <line x1="220" y1="220" x2="342" y2="152"/>
+            <line x1="220" y1="220" x2="342" y2="298"/>
+            <line x1="220" y1="220" x2="220" y2="358"/>
+            <line x1="220" y1="220" x2="98" y2="298"/>
+            <line x1="220" y1="220" x2="98" y2="152"/>
+          </g>
+          <g class="nodes" fill="#6fa8dc">
+            <circle cx="220" cy="82" r="4.5"/>
+            <circle cx="342" cy="152" r="4.5"/>
+            <circle cx="342" cy="298" r="4.5"/>
+            <circle cx="220" cy="358" r="4.5"/>
+            <circle cx="98" cy="298" r="4.5"/>
+            <circle cx="98" cy="152" r="4.5"/>
+          </g>
+          <text x="220" y="66" text-anchor="middle" class="const-label">Marketing</text>
+          <text x="354" y="150" text-anchor="start" class="const-label">Finance</text>
+          <text x="354" y="306" text-anchor="start" class="const-label">HR</text>
+          <text x="220" y="382" text-anchor="middle" class="const-label">Operations</text>
+          <text x="86" y="306" text-anchor="end" class="const-label">Sales</text>
+          <text x="86" y="150" text-anchor="end" class="const-label">Admin</text>
+        </svg>
       </div>
     </section>
 
@@ -144,7 +165,7 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="index.html">
-            <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#111a2e" stroke="#1c2740"/><path d="M24 12 C20.5 9.9 15.5 9 10.5 9 L10.5 34 C15.5 34 20.5 34.8 24 37 C27.5 34.8 32.5 34 37.5 34 L37.5 9 C32.5 9 27.5 9.9 24 12 Z" fill="none" stroke="#0fc2c0" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 12 L24 37" stroke="#0fc2c0" stroke-width="2.6"/></svg>
+            <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#131a2e" stroke="#232b40"/><path d="M24 12 C20.5 9.9 15.5 9 10.5 9 L10.5 34 C15.5 34 20.5 34.8 24 37 C27.5 34.8 32.5 34 37.5 34 L37.5 9 C32.5 9 27.5 9.9 24 12 Z" fill="none" stroke="#d4af37" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 12 L24 37" stroke="#d4af37" stroke-width="2.6"/></svg>
             <span>buku.pro</span>
           </a>
           <p class="lead" style="margin-top:14px;font-size:0.9rem;max-width:34ch;">AI agents for business.</p>
