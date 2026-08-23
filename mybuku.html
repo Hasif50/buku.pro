@@ -18,7 +18,12 @@
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="mybuku.html" aria-current="page">myBuku</a>
-        <a href="bukubiz.html">Bukubiz</a>
+        <div class="nav-item has-dropdown">
+          <a href="bukubiz.html" class="nav-parent">Bukubiz</a>
+          <div class="dropdown">
+            <a href="dentalos.html">DentalOS AI</a>
+          </div>
+        </div>
       </nav>
       <div class="nav-cta">
         <a class="btn btn-primary" href="#get-started">Get started</a>
@@ -39,26 +44,9 @@
             <a class="btn btn-ghost btn-lg" href="index.html#products">Compare products</a>
           </div>
         </div>
-        <div class="preview reveal" aria-label="Sample savings preview">
-          <div class="preview-card">
-            <div class="label">Savings agent</div>
-            <div class="amount">RM 1,850.00</div>
-            <!-- sample data below; replace with real product screenshots when available -->
-            <div class="preview-row">
-              <div>
-                <div class="name">Auto save</div>
-                <div class="meta">Every Friday</div>
-              </div>
-              <div class="pos">+RM 50.00</div>
-            </div>
-            <div class="preview-row">
-              <div>
-                <div class="name">Family shared budget</div>
-                <div class="meta">3 members</div>
-              </div>
-              <div class="neg">On track</div>
-            </div>
-            <span class="preview-chip">myBuku</span>
+        <div class="preview reveal" aria-label="myBuku app preview">
+          <div class="preview-card preview-shot">
+            <img src="assets/screenshots/mybuku-dashboard.png" alt="myBuku dashboard" onerror="this.onerror=null;this.src='assets/screenshots/placeholder.svg'">
           </div>
         </div>
       </div>

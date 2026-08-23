@@ -45,6 +45,22 @@
     });
   });
 
+  // Subtle scroll parallax on the hero preview (desktop only)
+  var preview = document.querySelector(".preview");
+  if (preview && window.matchMedia("(min-width: 901px)").matches) {
+    var ticking = false;
+    function updateParallax() {
+      preview.style.transform = "translateY(" + Math.min(window.scrollY, 700) * 0.07 + "px)";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
   targets.forEach(function (el) {
     observer.observe(el);
   });

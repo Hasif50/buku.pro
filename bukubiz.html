@@ -18,7 +18,12 @@
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="mybuku.html">myBuku</a>
-        <a href="bukubiz.html" aria-current="page">Bukubiz</a>
+        <div class="nav-item has-dropdown">
+          <a href="bukubiz.html" class="nav-parent" aria-current="page">Bukubiz</a>
+          <div class="dropdown">
+            <a href="dentalos.html">DentalOS AI</a>
+          </div>
+        </div>
       </nav>
       <div class="nav-cta">
         <a class="btn btn-primary" href="#get-started">Get started</a>
@@ -39,18 +44,9 @@
             <a class="btn btn-ghost btn-lg" href="dentalos.html">See DentalOS AI</a>
           </div>
         </div>
-        <div class="preview reveal" aria-label="Sample department preview">
-          <div class="preview-card">
-            <div class="label">Departments</div>
-            <div class="amount">6 agents</div>
-            <!-- sample data below; replace with real product screenshots when available -->
-            <div class="preview-row"><div><div class="name">Marketing</div><div class="meta">Campaigns and outreach</div></div><div class="pos">Active</div></div>
-            <div class="preview-row"><div><div class="name">Finance</div><div class="meta">Invoices and cash flow</div></div><div class="pos">Active</div></div>
-            <div class="preview-row"><div><div class="name">HR</div><div class="meta">Staff and payroll</div></div><div class="pos">Active</div></div>
-            <div class="preview-row"><div><div class="name">Operations</div><div class="meta">Inventory and running</div></div><div class="pos">Active</div></div>
-            <div class="preview-row"><div><div class="name">Sales</div><div class="meta">Pipeline and follow-ups</div></div><div class="pos">Active</div></div>
-            <div class="preview-row"><div><div class="name">Admin</div><div class="meta">Records and compliance</div></div><div class="pos">Active</div></div>
-            <span class="preview-chip">Bukubiz</span>
+        <div class="preview reveal" aria-label="Bukubiz agents preview">
+          <div class="preview-card preview-shot">
+            <img src="assets/screenshots/bukubiz-agents.png" alt="Bukubiz agents dashboard" onerror="this.onerror=null;this.src='assets/screenshots/placeholder.svg'">
           </div>
         </div>
       </div>

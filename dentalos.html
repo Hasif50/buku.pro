@@ -18,7 +18,12 @@
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="mybuku.html">myBuku</a>
-        <a href="bukubiz.html" aria-current="page">Bukubiz</a>
+        <div class="nav-item has-dropdown">
+          <a href="bukubiz.html" class="nav-parent" aria-current="page">Bukubiz</a>
+          <div class="dropdown">
+            <a href="dentalos.html">DentalOS AI</a>
+          </div>
+        </div>
       </nav>
       <div class="nav-cta">
         <a class="btn btn-primary" href="#get-started">Get started</a>
@@ -39,28 +44,9 @@
             <a class="btn btn-ghost btn-lg" href="bukubiz.html">Built on Bukubiz</a>
           </div>
         </div>
-        <div class="preview reveal" aria-label="Sample clinic agent preview">
-          <div class="preview-card">
-            <div class="label">Clinic agents</div>
-            <div class="amount">5 departments</div>
-            <!-- sample data below; replace with real product screenshots when available -->
-            <div class="preview-row">
-              <div><div class="name">Recall campaign</div><div class="meta">Marketing</div></div>
-              <div class="pos">Drafted</div>
-            </div>
-            <div class="preview-row">
-              <div><div class="name">Overdue invoice</div><div class="meta">Finance</div></div>
-              <div class="neg">Flagged</div>
-            </div>
-            <div class="preview-row">
-              <div><div class="name">Low inventory</div><div class="meta">Operations</div></div>
-              <div class="neg">Flagged</div>
-            </div>
-            <div class="preview-row">
-              <div><div class="name">Patient follow-up</div><div class="meta">Sales</div></div>
-              <div class="pos">Scheduled</div>
-            </div>
-            <span class="preview-chip">DentalOS AI</span>
+        <div class="preview reveal" aria-label="DentalOS clinic preview">
+          <div class="preview-card preview-shot">
+            <img src="assets/screenshots/dentalos-clinic.png" alt="DentalOS clinic dashboard" onerror="this.onerror=null;this.src='assets/screenshots/placeholder.svg'">
           </div>
         </div>
       </div>

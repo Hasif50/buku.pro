@@ -18,7 +18,12 @@
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="mybuku.html">myBuku</a>
-        <a href="bukubiz.html">Bukubiz</a>
+        <div class="nav-item has-dropdown">
+          <a href="bukubiz.html" class="nav-parent">Bukubiz</a>
+          <div class="dropdown">
+            <a href="dentalos.html">DentalOS AI</a>
+          </div>
+        </div>
       </nav>
       <div class="nav-cta">
         <a class="btn btn-primary" href="#get-started">Get started</a>
@@ -40,40 +45,9 @@
           </div>
         </div>
 
-        <div class="preview reveal" aria-label="Sample agent activity preview">
-          <div class="preview-card">
-            <div class="label">Active agents</div>
-            <div class="amount">4 departments</div>
-            <!-- sample data below; replace with real product screenshots when available -->
-            <div class="preview-row">
-              <div>
-                <div class="name">Finance agent</div>
-                <div class="meta">Invoice overdue flagged</div>
-              </div>
-              <div class="pos">Done</div>
-            </div>
-            <div class="preview-row">
-              <div>
-                <div class="name">Marketing agent</div>
-                <div class="meta">Campaign drafted</div>
-              </div>
-              <div class="pos">Done</div>
-            </div>
-            <div class="preview-row">
-              <div>
-                <div class="name">Sales agent</div>
-                <div class="meta">Follow-up scheduled</div>
-              </div>
-              <div class="neg">Running</div>
-            </div>
-            <div class="preview-row">
-              <div>
-                <div class="name">Ops agent</div>
-                <div class="meta">Inventory low</div>
-              </div>
-              <div class="neg">Running</div>
-            </div>
-            <span class="preview-chip">buku.pro &middot; agentic</span>
+        <div class="preview reveal" aria-label="Bukubiz agents preview">
+          <div class="preview-card preview-shot">
+            <img src="assets/screenshots/bukubiz-agents.png" alt="Bukubiz agents dashboard" onerror="this.onerror=null;this.src='assets/screenshots/placeholder.svg'">
           </div>
         </div>
       </div>
@@ -128,24 +102,25 @@
 
     <section class="section section-soft">
       <div class="container">
-        <div class="section-head center">
-          <h2 class="h2">Why businesses choose buku.pro</h2>
+        <div class="section-head center" style="max-width:720px;">
+          <h2 class="h2">buku means <span class="grad">book</span>.</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">Your money and your business, written into one book. myBuku writes the personal pages, Bukubiz writes the business pages, and AI agents do the writing.</p>
         </div>
         <div class="features">
           <div class="feature reveal">
             <div class="f-icon">01</div>
-            <h3>Every department</h3>
-            <p>Agents for finance, marketing, sales, and operations, not just one part of the business.</p>
+            <h3>The book</h3>
+            <p>One place where your money and business are recorded, clearly.</p>
           </div>
           <div class="feature reveal">
             <div class="f-icon">02</div>
-            <h3>Built on your data</h3>
-            <p>Agents work from your own numbers, customers, and records.</p>
+            <h3>The agents</h3>
+            <p>AI agents that do the work, across every department and your personal money.</p>
           </div>
           <div class="feature reveal">
             <div class="f-icon">03</div>
-            <h3>Private by design</h3>
-            <p>Tenant isolation and privacy controls come first, for every business we serve.</p>
+            <h3>The chapters</h3>
+            <p>Personal (myBuku), business (Bukubiz), and industry use cases like DentalOS AI.</p>
           </div>
         </div>
       </div>
