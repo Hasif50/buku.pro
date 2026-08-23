@@ -78,6 +78,19 @@
         });
       }
     }, { passive: true });
+
+    // Magnetic primary buttons
+    document.querySelectorAll(".btn-primary").forEach(function (btn) {
+      btn.addEventListener("mousemove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var dx = (e.clientX - r.left - r.width / 2) * 0.12;
+        var dy = (e.clientY - r.top - r.height / 2) * 0.16;
+        btn.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
+      });
+      btn.addEventListener("mouseleave", function () {
+        btn.style.transform = "";
+      });
+    });
   }
 
   targets.forEach(function (el) {
