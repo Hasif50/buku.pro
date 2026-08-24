@@ -1,0 +1,28 @@
+# Auto-deploy buku.pro to Cloudflare Pages on every push to main.
+# One-time setup: add two repo secrets —
+#   CLOUDFLARE_API_TOKEN  (Cloudflare dashboard → My Profile → API Tokens)
+#   CLOUDFLARE_ACCOUNT_ID (Cloudflare dashboard → right sidebar)
+# Then create the Pages project once:
+#   npx wrangler pages project create buku-pro --production-branch main
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy . --project-name buku-pro --branch main
