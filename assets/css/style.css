@@ -465,3 +465,28 @@ body::after {
 .chip.done { background: rgba(79, 209, 165, 0.14); color: var(--green); }
 .chip.work { background: rgba(212, 175, 55, 0.16); color: var(--accent); }
 .chip.queue { background: rgba(139, 147, 168, 0.14); color: var(--muted); }
+
+/* ---------- Department agent pages ---------- */
+.dept-hero { padding: 68px 0 36px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--dept, var(--accent));
+  padding: 6px 13px; border-radius: 999px; border: 1px solid var(--line);
+}
+.stat-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 34px; }
+.stat { background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.stat .n { font-family: var(--font-mono); font-size: 1.55rem; font-weight: 600; color: var(--dept, var(--accent)); line-height: 1.1; }
+.stat .l { color: var(--muted); font-size: 0.8rem; margin-top: 5px; }
+.cap-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.cap { background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; transition: border-color .18s ease, transform .18s ease; }
+.cap:hover { border-color: var(--dept, var(--accent)); transform: translateY(-3px); }
+.cap h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; margin-bottom: 8px; }
+.cap p { color: var(--muted); font-size: 0.92rem; }
+.cap .risk { display: block; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dept, var(--accent)); margin-top: 14px; }
+.flow { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; margin-top: 22px; font-family: var(--font-mono); font-size: 0.76rem; }
+.flow .node { padding: 8px 13px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
+.flow .node.self { border-color: var(--dept, var(--accent)); color: var(--dept, var(--accent)); font-weight: 600; }
+.flow .arrow { color: var(--muted); }
+.safety-note { border-left: 2px solid var(--red); padding: 4px 0 4px 16px; color: var(--muted); font-size: 0.9rem; margin-top: 18px; }
