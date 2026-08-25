@@ -122,4 +122,67 @@
   targets.forEach(function (el) {
     observer.observe(el);
   });
+
+  /* ---- Illuminated Ledger: enhanced motion (preloader, Lenis, GSAP) ---- */
+
+  // Preloader — the book opens, then the curtain lifts away.
+  var preloader = document.getElementById("preloader");
+  if (preloader) {
+    var lift = function () {
+      preloader.classList.add("done");
+      setTimeout(function () {
+        if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      }, 800);
+    };
+    if (document.readyState === "complete") {
+      setTimeout(lift, 600);
+    } else {
+      window.addEventListener("load", function () { setTimeout(lift, 600); });
+    }
+    setTimeout(lift, 3000); // safety: never trap content if load stalls
+  }
+
+  // Lenis smooth scroll, synced to GSAP ScrollTrigger when both are present.
+  var lenis;
+  if (window.Lenis && !reduceMotion) {
+    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    document.documentElement.style.scrollBehavior = "auto"; // Lenis drives smoothing
+    if (window.gsap && window.ScrollTrigger) {
+      window.gsap.registerPlugin(window.ScrollTrigger);
+      lenis.on("scroll", window.ScrollTrigger.update);
+      window.gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      window.gsap.ticker.lagSmoothing(0);
+    } else {
+      var lraf = function (time) { lenis.raf(time); requestAnimationFrame(lraf); };
+      requestAnimationFrame(lraf);
+    }
+  }
+
+  // GSAP scroll motion — headline ink-reveals + the open-book page turn.
+  if (window.gsap && window.ScrollTrigger && !reduceMotion) {
+    window.gsap.registerPlugin(window.ScrollTrigger);
+
+    // Headlines rise out of the ink as they enter the viewport.
+    window.gsap.utils.toArray(".h2, .section-head .lead").forEach(function (el) {
+      window.gsap.fromTo(el,
+        { y: 26, opacity: 0, clipPath: "inset(0% 0% 100% 0%)" },
+        {
+          y: 0, opacity: 1, clipPath: "inset(0% 0% 0% 0%)",
+          duration: 0.9, ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 86%" }
+        }
+      );
+    });
+
+    // The open book turns (depth parallax) as you scroll through the hero.
+    var constel = document.querySelector(".constellation");
+    if (constel) {
+      constel.classList.add("in");       // settle the reveal state
+      constel.style.transition = "none"; // let GSAP own the transform
+      window.gsap.to(constel, {
+        y: -56, scale: 0.97, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
+      });
+    }
+  }
 })();
