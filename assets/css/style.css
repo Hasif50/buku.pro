@@ -534,3 +534,21 @@ body::after {
   12%, 24% { opacity: 1; filter: drop-shadow(0 0 6px rgba(111,168,220,0.9)); }
   40% { opacity: 0.25; }
 }
+
+/* Open-book pages unfold on load */
+.constellation .page {
+  animation: page-fade 1.2s ease-out both;
+}
+.constellation .page.left { animation-delay: .1s; }
+.constellation .page.right { animation-delay: .3s; }
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.constellation .gild, .constellation line[stroke="#d4af37"] {
+  animation: gild-pulse 4s ease-in-out infinite;
+}
+@keyframes gild-pulse {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
