@@ -490,3 +490,47 @@ body::after {
 .flow .node.self { border-color: var(--dept, var(--accent)); color: var(--dept, var(--accent)); font-weight: 600; }
 .flow .arrow { color: var(--muted); }
 .safety-note { border-left: 2px solid var(--red); padding: 4px 0 4px 16px; color: var(--muted); font-size: 0.9rem; margin-top: 18px; }
+
+/* ---------- Illuminated Ledger: brand motion ---------- */
+
+/* Gold-foil sweep across display headings (the gilding catching light) */
+.display { position: relative; }
+.display::after {
+  content: "";
+  position: absolute;
+  inset: -0.06em 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(244,220,143,0.16) 46%, rgba(233,199,102,0.3) 50%, rgba(244,220,143,0.16) 54%, transparent 70%);
+  background-size: 220% 100%;
+  animation: foil-sweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes foil-sweep {
+  0% { background-position: 130% 0; }
+  60%, 100% { background-position: -30% 0; }
+}
+
+/* Ink-reveal: the book writes the hero line */
+.hero-copy .display {
+  animation: ink-reveal 1.2s cubic-bezier(.22,.9,.3,1) both;
+}
+@keyframes ink-reveal {
+  from { opacity: 0; clip-path: inset(0 100% 0 0); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+/* Constellation nodes "write" in sequence — the agents logging work */
+.constellation .nodes circle {
+  opacity: 0.25;
+  animation: node-write 4.5s ease-in-out infinite;
+}
+.constellation .nodes circle:nth-child(1) { animation-delay: 0s; }
+.constellation .nodes circle:nth-child(2) { animation-delay: .75s; }
+.constellation .nodes circle:nth-child(3) { animation-delay: 1.5s; }
+.constellation .nodes circle:nth-child(4) { animation-delay: 2.25s; }
+.constellation .nodes circle:nth-child(5) { animation-delay: 3s; }
+.constellation .nodes circle:nth-child(6) { animation-delay: 3.75s; }
+@keyframes node-write {
+  0%, 100% { opacity: 0.25; }
+  12%, 24% { opacity: 1; filter: drop-shadow(0 0 6px rgba(111,168,220,0.9)); }
+  40% { opacity: 0.25; }
+}
