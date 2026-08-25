@@ -195,7 +195,7 @@ img { max-width: 100%; display: block; }
     radial-gradient(1.2px 1.2px at 92% 55%, rgba(255,255,255,0.4), transparent 50%),
     radial-gradient(1px 1px at 6% 40%, rgba(255,255,255,0.4), transparent 50%);
 }
-.hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 .hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
 .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
@@ -586,4 +586,43 @@ body::after {
   .preloader { transition: none; }
   .preloader-mark::after, .preloader-bar i { animation: none; }
   .preloader-bar i { transform: none; }
+}
+
+/* ---------- Aurora blobs: slow-drifting light fields behind the hero ---------- */
+.hero::after {
+  content: "";
+  position: absolute; inset: -12% -8%; z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 34% at 82% 18%, rgba(111, 168, 220, 0.17), transparent 62%),
+    radial-gradient(36% 30% at 12% 80%, rgba(212, 175, 55, 0.13), transparent 62%),
+    radial-gradient(30% 26% at 55% 42%, rgba(79, 209, 165, 0.08), transparent 62%);
+  filter: blur(42px);
+  animation: aurora-drift 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes aurora-drift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to { transform: translate3d(2%, 2%, 0) scale(1.07); }
+}
+
+/* ---------- Page transitions: native ink-wipe between pages ---------- */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root) {
+  animation: none; /* the outgoing page stays put while the new one wipes over it */
+}
+::view-transition-new(root) {
+  animation: vt-ink 0.5s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+@keyframes vt-ink {
+  from { clip-path: inset(0 0 100% 0); opacity: 0.4; }
+  to { clip-path: inset(0 0 0% 0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after { animation: none; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
 }
