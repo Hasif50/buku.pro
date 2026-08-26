@@ -203,6 +203,14 @@ img { max-width: 100%; display: block; }
 .hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
 .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
+/* Clean, centered hero */
+.hero-centered { max-width: 860px; margin: 0 auto; }
+.hero-centered .hero-copy { align-items: center; text-align: center; }
+.hero-centered .lead { margin-left: auto; margin-right: auto; }
+.hero-centered .ledger { margin-left: auto; margin-right: auto; text-align: left; }
+.hero::after { display: none; }   /* remove aurora blobs */
+.display::after { display: none; } /* remove foil sweep */
+
 /* ---------- hero book (opens on scroll) ---------- */
 .book3d {
   position: relative; width: 100%; max-width: 400px; height: 300px;
