@@ -180,13 +180,14 @@
       );
     });
 
-    // The book opens — its cover turns on the spine as you scroll the hero.
+    // The book opens on load — its cover turns on the spine, revealing the pages.
     var bookCover = document.querySelector(".book-cover");
     if (bookCover) {
       window.gsap.to(bookCover, {
         rotationY: -150,
-        ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
+        duration: 1.5,
+        ease: "power3.inOut",
+        delay: 0.8
       });
     }
   }
