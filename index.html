@@ -64,8 +64,24 @@
         </div>
 
         <svg class="constellation reveal" viewBox="0 0 460 340" aria-hidden="true">
-          <path class="page left" d="M230 42 C152 56 92 94 60 150 L60 288 C100 252 156 238 230 260 Z" fill="rgba(19,26,46,0.4)" stroke="#d4af37" stroke-width="1.4"/>
-          <path class="page right" d="M230 42 C308 56 368 94 400 150 L400 288 C360 252 304 238 230 260 Z" fill="rgba(19,26,46,0.4)" stroke="#d4af37" stroke-width="1.4"/>
+          <defs>
+            <linearGradient id="pageGild" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="rgba(212,175,55,0.12)"/>
+              <stop offset="1" stop-color="rgba(19,26,46,0.55)"/>
+            </linearGradient>
+          </defs>
+          <path class="page left" d="M230 42 C152 56 92 94 60 150 L60 288 C100 252 156 238 230 260 Z" fill="url(#pageGild)" stroke="#d4af37" stroke-width="1.6"/>
+          <path class="page right" d="M230 42 C308 56 368 94 400 150 L400 288 C360 252 304 238 230 260 Z" fill="url(#pageGild)" stroke="#d4af37" stroke-width="1.6"/>
+          <g stroke="rgba(241,232,214,0.16)" stroke-width="1" stroke-linecap="round">
+            <line x1="92" y1="184" x2="202" y2="174"/>
+            <line x1="88" y1="206" x2="204" y2="196"/>
+            <line x1="84" y1="228" x2="206" y2="218"/>
+            <line x1="80" y1="250" x2="208" y2="240"/>
+            <line x1="258" y1="174" x2="368" y2="184"/>
+            <line x1="256" y1="196" x2="372" y2="206"/>
+            <line x1="254" y1="218" x2="374" y2="228"/>
+            <line x1="252" y1="240" x2="376" y2="250"/>
+          </g>
           <line x1="230" y1="42" x2="230" y2="260" stroke="#d4af37" stroke-width="2.2"/>
           <path d="M60 150 C92 94 152 56 230 42 C308 56 368 94 400 150" fill="none" stroke="#e9c766" stroke-width="2.4"/>
           <g stroke="rgba(111,168,220,0.28)" stroke-width="1">
@@ -149,21 +165,21 @@
           <p class="lead" style="margin-left:auto;margin-right:auto;">Your money and your business, written into one book. myBuku writes the personal pages, Bukubiz writes the business pages, and AI agents do the writing.</p>
         </div>
         <div class="chapters-stage">
-          <article class="chapter">
+          <article class="chapter reveal">
             <span class="chapter-num">01</span>
             <div class="chapter-copy">
               <h3>The book</h3>
               <p>One place where your money and business are recorded, clearly.</p>
             </div>
           </article>
-          <article class="chapter">
+          <article class="chapter reveal">
             <span class="chapter-num">02</span>
             <div class="chapter-copy">
               <h3>The agents</h3>
               <p>AI agents that do the work, across every department and your personal money.</p>
             </div>
           </article>
-          <article class="chapter">
+          <article class="chapter reveal">
             <span class="chapter-num">03</span>
             <div class="chapter-copy">
               <h3>The chapters</h3>

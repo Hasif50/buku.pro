@@ -68,20 +68,20 @@ img { max-width: 100%; display: block; }
 .display {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.9rem, 6.5vw, 5.25rem);
-  line-height: 1.0;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 .h2 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.1rem, 4.2vw, 3.1rem);
-  line-height: 1.12;
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  line-height: 1.14;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
-.lead { font-size: 1.15rem; line-height: 1.65; color: var(--ink-soft); max-width: 60ch; }
+.lead { font-size: 1.1rem; line-height: 1.65; color: var(--ink-soft); max-width: 60ch; }
 
 .eyebrow {
   display: inline-flex;
@@ -506,9 +506,9 @@ body::after {
   content: "";
   position: absolute;
   inset: -0.06em 0;
-  background: linear-gradient(105deg, transparent 30%, rgba(244,220,143,0.16) 46%, rgba(233,199,102,0.3) 50%, rgba(244,220,143,0.16) 54%, transparent 70%);
+  background: linear-gradient(105deg, transparent 34%, rgba(244,220,143,0.09) 47%, rgba(233,199,102,0.16) 50%, rgba(244,220,143,0.09) 53%, transparent 66%);
   background-size: 220% 100%;
-  animation: foil-sweep 6s ease-in-out infinite;
+  animation: foil-sweep 8s ease-in-out infinite;
   pointer-events: none;
 }
 @keyframes foil-sweep {
@@ -627,25 +627,22 @@ body::after {
 /* ---------- Split-text words (hero headline) ---------- */
 .hero-copy .display .word { display: inline-block; }
 
-/* ---------- Chapters — scroll narrative ---------- */
+/* ---------- Chapters ---------- */
+.chapters-stage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .chapter {
-  display: flex; align-items: flex-start; gap: 26px;
+  display: flex; flex-direction: column; gap: 18px;
   padding: 30px 32px; border: 1px solid var(--line); border-radius: var(--radius);
   background: linear-gradient(180deg, #16203a, #101729);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 24px 50px -32px rgba(0, 0, 0, 0.8);
 }
-.chapter + .chapter { margin-top: 18px; }
 .chapter-num {
-  font-family: var(--font-display); font-weight: 700; font-size: 3.2rem; line-height: 1;
+  font-family: var(--font-display); font-weight: 700; font-size: 2.6rem; line-height: 1;
   background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.chapter-copy h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; margin-bottom: 8px; }
-.chapter-copy p { color: var(--muted); line-height: 1.65; }
+.chapter-copy h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; margin-bottom: 8px; }
+.chapter-copy p { color: var(--muted); line-height: 1.6; }
 
-@media (min-width: 901px) {
-  .chapters-stage.is-pinned { position: relative; min-height: 320px; }
-  .chapters-stage.is-pinned .chapter { position: absolute; inset: 0; margin-top: 0; align-items: center; padding: 44px 48px; }
-}
+@media (max-width: 900px) { .chapters-stage { grid-template-columns: 1fr; } }
 
 /* ---------- Page transitions: native ink-wipe between pages ---------- */
 @view-transition {

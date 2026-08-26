@@ -188,14 +188,14 @@
       if (window.matchMedia("(pointer: fine)").matches) {
         var heroEl = document.querySelector(".hero");
         window.gsap.set(constel, { transformPerspective: 900 });
-        var tiltX = window.gsap.quickTo(constel, "rotationX", { duration: 0.6, ease: "power2.out" });
-        var tiltY = window.gsap.quickTo(constel, "rotationY", { duration: 0.6, ease: "power2.out" });
+        var tiltX = window.gsap.quickTo(constel, "rotationX", { duration: 0.9, ease: "power2.out" });
+        var tiltY = window.gsap.quickTo(constel, "rotationY", { duration: 0.9, ease: "power2.out" });
         heroEl.addEventListener("mousemove", function (e) {
           var r = heroEl.getBoundingClientRect();
           var px = (e.clientX - r.left) / r.width - 0.5;
           var py = (e.clientY - r.top) / r.height - 0.5;
-          tiltY(px * 12);
-          tiltX(-py * 10);
+          tiltY(px * 5);
+          tiltX(-py * 4);
         });
         heroEl.addEventListener("mouseleave", function () {
           tiltX(0);
@@ -273,31 +273,10 @@
         w.style.animation = "shimmer 7s linear infinite";
       });
       window.gsap.fromTo(split.words,
-        { y: "0.6em", opacity: 0, filter: "blur(6px)" },
-        { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.9, ease: "power3.out", stagger: 0.06, delay: 0.1 }
+        { y: "0.3em", opacity: 0, filter: "blur(3px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", duration: 1.1, ease: "power2.out", stagger: 0.035, delay: 0.15 }
       );
     }
   }
 
-  // Chapters — pinned scroll narrative (desktop only).
-  var stage = document.querySelector(".chapters-stage");
-  if (stage && window.gsap && window.ScrollTrigger && !reduceMotion && window.matchMedia("(min-width: 901px)").matches) {
-    stage.classList.add("is-pinned");
-    var chEls = stage.querySelectorAll(".chapter");
-    window.gsap.set(chEls, { opacity: 0, y: 44 });
-    var chTl = window.gsap.timeline({
-      scrollTrigger: {
-        trigger: ".chapters",
-        start: "top top",
-        end: "+=180%",
-        pin: true,
-        scrub: 1
-      }
-    });
-    chTl.to(chEls[0], { opacity: 1, y: 0, duration: 1 })
-      .to(chEls[0], { opacity: 0, y: -44, duration: 1 })
-      .to(chEls[1], { opacity: 1, y: 0, duration: 1 }, "-=0.85")
-      .to(chEls[1], { opacity: 0, y: -44, duration: 1 })
-      .to(chEls[2], { opacity: 1, y: 0, duration: 1 }, "-=0.85");
-  }
 })();
