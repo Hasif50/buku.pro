@@ -613,6 +613,32 @@ body::after {
   display: block; pointer-events: none;
 }
 
+/* ---------- Scroll progress (gold hairline) ---------- */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 95; pointer-events: none; }
+.scroll-progress i { display: block; height: 100%; width: 100%; background: var(--grad); transform: scaleX(0); transform-origin: 0 50%; }
+
+/* ---------- Split-text words (hero headline) ---------- */
+.hero-copy .display .word { display: inline-block; }
+
+/* ---------- Chapters — scroll narrative ---------- */
+.chapter {
+  display: flex; align-items: flex-start; gap: 26px;
+  padding: 30px 32px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+.chapter + .chapter { margin-top: 18px; }
+.chapter-num {
+  font-family: var(--font-display); font-weight: 700; font-size: 3.2rem; line-height: 1;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.chapter-copy h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.45rem; margin-bottom: 8px; }
+.chapter-copy p { color: var(--muted); line-height: 1.65; }
+
+@media (min-width: 901px) {
+  .chapters-stage.is-pinned { position: relative; min-height: 320px; }
+  .chapters-stage.is-pinned .chapter { position: absolute; inset: 0; margin-top: 0; align-items: center; padding: 44px 48px; }
+}
+
 /* ---------- Page transitions: native ink-wipe between pages ---------- */
 @view-transition {
   navigation: auto;

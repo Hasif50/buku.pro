@@ -245,4 +245,59 @@
       requestAnimationFrame(drawStars);
     })();
   }
+
+  // Scroll progress (gold hairline) — works with or without GSAP.
+  var progressBar = document.querySelector(".scroll-progress i");
+  if (progressBar && !reduceMotion) {
+    var setProgress = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      progressBar.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
+    };
+    window.addEventListener("scroll", setProgress, { passive: true });
+    setProgress();
+  }
+
+  // Split-text hero headline — words rise from ink, gold word keeps its gradient.
+  if (window.SplitType && window.gsap && !reduceMotion) {
+    var display = document.querySelector(".hero-copy .display");
+    if (display) {
+      display.style.animation = "none"; // disable CSS ink-reveal, use JS split
+      var split = new window.SplitType(display, { types: "words" });
+      display.querySelectorAll(".grad .word").forEach(function (w) {
+        w.style.background = "var(--grad)";
+        w.style.webkitBackgroundClip = "text";
+        w.style.backgroundClip = "text";
+        w.style.color = "transparent";
+        w.style.backgroundSize = "200% auto";
+        w.style.animation = "shimmer 7s linear infinite";
+      });
+      window.gsap.fromTo(split.words,
+        { y: "0.6em", opacity: 0, filter: "blur(6px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.9, ease: "power3.out", stagger: 0.06, delay: 0.1 }
+      );
+    }
+  }
+
+  // Chapters — pinned scroll narrative (desktop only).
+  var stage = document.querySelector(".chapters-stage");
+  if (stage && window.gsap && window.ScrollTrigger && !reduceMotion && window.matchMedia("(min-width: 901px)").matches) {
+    stage.classList.add("is-pinned");
+    var chEls = stage.querySelectorAll(".chapter");
+    window.gsap.set(chEls, { opacity: 0, y: 44 });
+    var chTl = window.gsap.timeline({
+      scrollTrigger: {
+        trigger: ".chapters",
+        start: "top top",
+        end: "+=180%",
+        pin: true,
+        scrub: 1
+      }
+    });
+    chTl.to(chEls[0], { opacity: 1, y: 0, duration: 1 })
+      .to(chEls[0], { opacity: 0, y: -44, duration: 1 })
+      .to(chEls[1], { opacity: 1, y: 0, duration: 1 }, "-=0.85")
+      .to(chEls[1], { opacity: 0, y: -44, duration: 1 })
+      .to(chEls[2], { opacity: 1, y: 0, duration: 1 }, "-=0.85");
+  }
 })();
