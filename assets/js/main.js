@@ -180,34 +180,14 @@
       );
     });
 
-    // The open book turns (depth parallax) as you scroll through the hero.
-    var constel = document.querySelector(".constellation");
-    if (constel) {
-      constel.classList.add("in");       // settle the reveal state
-      constel.style.transition = "none"; // let GSAP own the transform
-      window.gsap.to(constel, {
-        y: -56, scale: 0.97, ease: "none",
+    // The book opens — its cover turns on the spine as you scroll the hero.
+    var bookCover = document.querySelector(".book-cover");
+    if (bookCover) {
+      window.gsap.to(bookCover, {
+        rotationY: -150,
+        ease: "none",
         scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
       });
-
-      // 3D page tilt — the open book leans toward the cursor (fine-pointer only).
-      if (window.matchMedia("(pointer: fine)").matches) {
-        var heroEl = document.querySelector(".hero");
-        window.gsap.set(constel, { transformPerspective: 900 });
-        var tiltX = window.gsap.quickTo(constel, "rotationX", { duration: 0.9, ease: "power2.out" });
-        var tiltY = window.gsap.quickTo(constel, "rotationY", { duration: 0.9, ease: "power2.out" });
-        heroEl.addEventListener("mousemove", function (e) {
-          var r = heroEl.getBoundingClientRect();
-          var px = (e.clientX - r.left) / r.width - 0.5;
-          var py = (e.clientY - r.top) / r.height - 0.5;
-          tiltY(px * 5);
-          tiltX(-py * 4);
-        });
-        heroEl.addEventListener("mouseleave", function () {
-          tiltX(0);
-          tiltY(0);
-        });
-      }
     }
   }
 
