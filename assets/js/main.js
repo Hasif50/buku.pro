@@ -204,4 +204,45 @@
       }
     }
   }
+
+  // Ambient starlight — a twinkling, slowly-drifting starfield behind the hero.
+  var starCanvas = document.querySelector(".starfield");
+  if (starCanvas && !reduceMotion) {
+    var sctx = starCanvas.getContext("2d");
+    var stars = [];
+    function sizeStars() {
+      starCanvas.width = starCanvas.offsetWidth;
+      starCanvas.height = starCanvas.offsetHeight;
+    }
+    sizeStars();
+    window.addEventListener("resize", sizeStars);
+    var starCount = Math.min(120, Math.floor((starCanvas.width * starCanvas.height) / 9000));
+    for (var i = 0; i < starCount; i++) {
+      stars.push({
+        x: Math.random() * starCanvas.width,
+        y: Math.random() * starCanvas.height,
+        r: Math.random() * 1.2 + 0.3,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 1.4,
+        drift: 0.02 + Math.random() * 0.06
+      });
+    }
+    var starT = 0;
+    (function drawStars() {
+      starT += 0.016;
+      sctx.clearRect(0, 0, starCanvas.width, starCanvas.height);
+      for (var j = 0; j < stars.length; j++) {
+        var s = stars[j];
+        s.y += s.drift;
+        if (s.y > starCanvas.height + 2) { s.y = -2; s.x = Math.random() * starCanvas.width; }
+        sctx.globalAlpha = 0.18 + 0.55 * (0.5 + 0.5 * Math.sin(starT * s.speed + s.phase));
+        sctx.fillStyle = "#cfe2f4";
+        sctx.beginPath();
+        sctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        sctx.fill();
+      }
+      sctx.globalAlpha = 1;
+      requestAnimationFrame(drawStars);
+    })();
+  }
 })();
