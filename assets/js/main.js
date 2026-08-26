@@ -61,23 +61,29 @@
     }, { passive: true });
   }
 
-  // Cursor glow (desktop, fine pointer only)
+  // Custom cursor — a gilded ring trailing the pointer (desktop, fine pointer).
   if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
-    var glow = document.createElement("div");
-    glow.className = "cursor-glow";
-    document.body.appendChild(glow);
-    var tx = 0, ty = 0, gx = 0, gy = 0, raf = 0;
+    var ring = document.createElement("div");
+    ring.className = "cursor-ring";
+    document.body.appendChild(ring);
+    var tx = 0, ty = 0, rx = 0, ry = 0, raf = 0;
     window.addEventListener("mousemove", function (e) {
       tx = e.clientX; ty = e.clientY;
       if (!raf) {
         raf = requestAnimationFrame(function () {
-          gx += (tx - gx) * 0.16;
-          gy += (ty - gy) * 0.16;
-          glow.style.transform = "translate(" + gx + "px," + gy + "px) translate(-50%, -50%)";
+          rx += (tx - rx) * 0.18;
+          ry += (ty - ry) * 0.18;
+          ring.style.transform = "translate(" + rx + "px," + ry + "px) translate(-50%, -50%)";
           raf = 0;
         });
       }
     }, { passive: true });
+
+    // Scale the ring over interactive elements.
+    document.querySelectorAll("a, button, .btn").forEach(function (el) {
+      el.addEventListener("mouseenter", function () { ring.classList.add("hover"); });
+      el.addEventListener("mouseleave", function () { ring.classList.remove("hover"); });
+    });
 
     // Magnetic primary buttons
     document.querySelectorAll(".btn-primary").forEach(function (btn) {
