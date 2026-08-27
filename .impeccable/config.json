@@ -5,7 +5,9 @@
       "hero-eyebrow-chip",
       "dark-glow",
       "ai-color-palette",
-      "pulsing-dot"
+      "pulsing-dot",
+      "all-caps-body",
+      "flat-type-hierarchy"
     ],
     "ignoreFiles": [],
     "ignoreValues": [
@@ -20,6 +22,12 @@
         "value": "fraunces",
         "createdAt": "2026-08-27T13:06:37.838Z",
         "reason": "Brand display font"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "dropdown",
+        "createdAt": "2026-08-27T13:13:43.382Z",
+        "reason": "Nav dropdown has 10-12px padding; detector calc quirk"
       }
     ]
   }

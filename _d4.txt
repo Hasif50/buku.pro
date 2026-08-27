@@ -1,0 +1,101 @@
+﻿node.exe : 
+At C:\Users\hashi\AppData\Roaming\npm\impeccable.ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules/impeccable/cli/bin/cli.js" $ ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+G:\buku-pro\bukubiz-admin.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+
+G:\buku-pro\bukubiz-finance.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [all-caps-body] text-transform: uppercase on 31 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+
+G:\buku-pro\bukubiz-hr.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [all-caps-body] text-transform: uppercase on 31 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+
+G:\buku-pro\bukubiz-marketing.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [all-caps-body] text-transform: uppercase on 34 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+
+G:\buku-pro\bukubiz-operations.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [all-caps-body] text-transform: uppercase on 34 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+
+G:\buku-pro\bukubiz-sales.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [all-caps-body] text-transform: uppercase on 34 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+
+G:\buku-pro\bukubiz.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+
+G:\buku-pro\dentalos.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [flat-type-hierarchy] Sizes: 11.5px, 11.8px, 13.8px, 14.1px, 14.4px, 15.2px, 16px, 16.3px, 17.6px, 19.2px (ratio 
+1.7:1)
+    → Font sizes are too close together — no clear visual hierarchy. Use fewer sizes with more contrast (aim for at 
+least a 1.25 ratio between steps).
+
+G:\buku-pro\index.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+
+G:\buku-pro\mybuku.html
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [flat-type-hierarchy] Sizes: 11.5px, 11.8px, 13.8px, 14.1px, 14.4px, 15.2px, 16px, 16.3px, 17.6px, 19.2px (ratio 
+1.7:1)
+    → Font sizes are too close together — no clear visual hierarchy. Use fewer sizes with more contrast (aim for at 
+least a 1.25 ratio between steps).
+
+17 anti-patterns found.
