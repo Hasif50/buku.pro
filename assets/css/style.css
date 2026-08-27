@@ -465,6 +465,8 @@ img { max-width: 100%; display: block; }
   .hero::before, .page-hero::before { animation: none; }
   .ink { opacity: 1; }
   .ink.in { animation: none; }
+  .eyebrow::before { transform: scaleX(1); }
+  .hero-copy .eyebrow::before { animation: none; }
   .fade-in { opacity: 1; transform: none; transition: none; }
   .hero-copy .eyebrow, .hero-copy .lead, .hero-copy .hero-actions { animation: none; }
   .chapters-head .lead::first-letter { animation: none; }
@@ -650,6 +652,7 @@ body::after {
   100% { transform: scale(1.35); opacity: 0; }
 }
 .preloader-word { font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; letter-spacing: 0.02em; color: var(--ink); }
+.preloader-pct { font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); letter-spacing: 0.12em; }
 .preloader-bar { width: 140px; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
 .preloader-bar i {
   display: block; height: 100%; width: 100%;
@@ -780,6 +783,21 @@ body::after {
   transition: transform 0.7s ease;
 }
 .product-card:hover::after { transform: translateX(100%); }
+
+/* ---------- Ledger stats: figures count up like totals ---------- */
+.stats-band { padding: 26px 0 6px; }
+.stats { display: flex; justify-content: center; align-items: flex-start; gap: 72px; flex-wrap: wrap; }
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.stat-n { font-family: var(--font-mono); font-size: 2rem; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; line-height: 1; }
+.stat-l { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Micro-interactions: brand mark glint, drawing rules ---------- */
+.brand-mark { transition: transform 0.35s ease, filter 0.35s ease; }
+.brand:hover .brand-mark { transform: rotate(-4deg) scale(1.06); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
+.eyebrow::before { transform: scaleX(0); transform-origin: left; transition: transform 0.55s ease 0.3s; }
+.eyebrow.in::before { transform: scaleX(1); }
+.hero-copy .eyebrow::before { animation: rule-draw 0.55s ease 0.5s both; }
+@keyframes rule-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 /* ---------- Page transitions: native ink-wipe between pages ---------- */
 @view-transition {

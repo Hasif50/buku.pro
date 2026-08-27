@@ -41,7 +41,7 @@
     targets.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Preloader — lifts away on load.
+  // Preloader — lifts away once the book is open.
   var preloader = document.getElementById("preloader");
   if (preloader) {
     var lift = function () {
@@ -49,11 +49,20 @@
       setTimeout(function () { if (preloader.parentNode) preloader.parentNode.removeChild(preloader); }, 800);
     };
     if (document.readyState === "complete") {
-      setTimeout(lift, 600);
+      setTimeout(lift, 1100);
     } else {
-      window.addEventListener("load", function () { setTimeout(lift, 600); });
+      window.addEventListener("load", function () { setTimeout(lift, 1100); });
     }
-    setTimeout(lift, 3000);
+    setTimeout(lift, 3200);
+    var pctEl = preloader.querySelector(".preloader-pct");
+    if (pctEl && !reduceMotion) {
+      var pc = 0;
+      var pctInt = setInterval(function () {
+        pc = Math.min(pc + 7, 100);
+        pctEl.textContent = pc;
+        if (pc >= 100) clearInterval(pctInt);
+      }, 70);
+    }
   }
 
   // Lenis smooth scroll (subtle).
@@ -87,6 +96,31 @@
         btn.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
       });
       btn.addEventListener("mouseleave", function () { btn.style.transform = ""; });
+    });
+  }
+
+  // Ledger counters — figures count up like totals when scrolled into view.
+  if (!reduceMotion) {
+    document.querySelectorAll(".stat-n[data-count]").forEach(function (el) {
+      var target = parseInt(el.getAttribute("data-count"), 10);
+      var pad = parseInt(el.getAttribute("data-pad") || "0", 10);
+      var suffix = el.getAttribute("data-suffix") || "";
+      var obs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          obs.disconnect();
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / 1300, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            var v = Math.round(target * eased);
+            el.textContent = (pad ? String(v).padStart(pad, "0") : v) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+      }, { threshold: 0.5 });
+      obs.observe(el);
     });
   }
 
