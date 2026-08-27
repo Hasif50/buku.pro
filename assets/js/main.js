@@ -65,15 +65,6 @@
     }
   }
 
-  // Lenis smooth scroll (subtle).
-  var lenis;
-  if (window.Lenis && !reduceMotion) {
-    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
-    document.documentElement.style.scrollBehavior = "auto";
-    var lraf = function (time) { lenis.raf(time); requestAnimationFrame(lraf); };
-    requestAnimationFrame(lraf);
-  }
-
   // Scroll progress (gold hairline).
   var progressBar = document.querySelector(".scroll-progress i");
   if (progressBar && !reduceMotion) {
@@ -124,10 +115,76 @@
     });
   }
 
+  // The book of dots — a 3D point-cloud book that turns like a globe.
+  var dotCanvas = document.querySelector(".dotbook");
+  if (dotCanvas && !reduceMotion) {
+    var dctx = dotCanvas.getContext("2d");
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function sizeDotbook() {
+      dotCanvas.width = dotCanvas.offsetWidth * dpr;
+      dotCanvas.height = dotCanvas.offsetHeight * dpr;
+      dctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    sizeDotbook();
+    window.addEventListener("resize", sizeDotbook);
+
+    // Book point cloud: covers, spine, fore-edge, top & bottom edges.
+    var pts = [];
+    var W = 2.6, H = 3.4, D = 0.6, step = 0.13;
+    for (var x = -W / 2; x <= W / 2; x += step) {
+      for (var y = -H / 2; y <= H / 2; y += step) {
+        pts.push([x, y, -D / 2], [x, y, D / 2]);
+      }
+    }
+    for (var y = -H / 2; y <= H / 2; y += 0.09) {
+      pts.push([-W / 2, y, 0], [W / 2, y, 0]);
+    }
+    for (var x = -W / 2; x <= W / 2; x += 0.09) {
+      pts.push([x, -H / 2, 0], [x, H / 2, 0]);
+    }
+
+    var angle = 0, running = true;
+    var dotObs = new IntersectionObserver(function (entries) {
+      running = entries[0].isIntersecting;
+      if (running) requestAnimationFrame(drawDotbook);
+    }, { threshold: 0.05 });
+    dotObs.observe(dotCanvas);
+
+    function drawDotbook() {
+      if (!running) return;
+      angle += 0.0045;
+      var w = dotCanvas.width / dpr, h = dotCanvas.height / dpr;
+      dctx.clearRect(0, 0, w, h);
+      var cx = w / 2, cy = h / 2;
+      var scale = Math.min(w, h) / 6.4;
+      var cosA = Math.cos(angle), sinA = Math.sin(angle);
+      var tilt = 0.32, cosT = Math.cos(tilt), sinT = Math.sin(tilt);
+      var persp = 6.5;
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        var x1 = p[0] * cosA - p[2] * sinA;
+        var z1 = p[0] * sinA + p[2] * cosA;
+        var y2 = p[1] * cosT - z1 * sinT;
+        var z2 = p[1] * sinT + z1 * cosT;
+        var k = persp / (persp + z2);
+        var sx = cx + x1 * scale * k;
+        var sy = cy + y2 * scale * k;
+        var edge = Math.abs(Math.abs(p[0]) - W / 2) < 0.001 || Math.abs(Math.abs(p[1]) - H / 2) < 0.001;
+        dctx.globalAlpha = Math.max(0.12, 0.35 + 0.55 * ((z2 + D) / (2 * D)));
+        dctx.fillStyle = z2 > 0 ? (edge ? "#e9c766" : "#d4af37") : "#6fa8dc";
+        dctx.beginPath();
+        dctx.arc(sx, sy, Math.max(0.5, 1.35 * k), 0, Math.PI * 2);
+        dctx.fill();
+      }
+      dctx.globalAlpha = 1;
+      requestAnimationFrame(drawDotbook);
+    }
+    requestAnimationFrame(drawDotbook);
+  }
+
   // Live ledger feed — the book writes itself.
   var ledger = document.getElementById("ledgerLines");
-  if (ledger && !reduceMotion) {
-    var tasks = [
+  if (ledger && !reduceMotion) {    var tasks = [
       { agent: "finance", task: "reconciling invoices", chip: "done", cls: "done" },
       { agent: "marketing", task: "drafting recall campaign", chip: "working", cls: "work" },
       { agent: "operations", task: "checking inventory", chip: "queued", cls: "queue" },
