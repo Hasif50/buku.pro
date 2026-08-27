@@ -18,7 +18,7 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Scroll reveal
-  var targets = document.querySelectorAll(".reveal");
+  var targets = document.querySelectorAll(".reveal, .ink, .fade-in");
   var observer;
   if (!reduceMotion && "IntersectionObserver" in window) {
     observer = new IntersectionObserver(function (entries) {
