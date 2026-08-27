@@ -1,0 +1,851 @@
+﻿node.exe : 
+At C:\Users\hashi\AppData\Roaming\npm\impeccable.ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules/impeccable/cli/bin/cli.js" $ ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+G:\buku-pro\bukubiz-admin.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Admin agent" above h1 "The keeper of trust."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "Bukubiz · Admin" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "approval_required" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "approval_required" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [skipped-heading] <h2> "Lock the platform down, provably." followed by <h4> "Departments" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\bukubiz-finance.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Finance agent" above h1 "The books always balance."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "Bukubiz · Finance" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [skipped-heading] <h2> "Never miss a statutory deadline." followed by <h4> "Departments" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\bukubiz-hr.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "HR agent" above h1 "People ops on autopilot."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "Bukubiz · HR" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [skipped-heading] <h2> "Run people ops without the paperwork." followed by <h4> "Departments" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\bukubiz-marketing.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Marketing agent" above h1 "Campaigns that pay for themselves."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "Bukubiz · Marketing" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [all-caps-body] text-transform: uppercase on 33 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [skipped-heading] <h2> "Put a marketer on every campaign." followed by <h4> "Departments" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\bukubiz-operations.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Operations agent" above h1 "The machine keeps moving."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "Bukubiz · Operations" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [all-caps-body] text-transform: uppercase on 33 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [skipped-heading] <h2> "Never stock out, never drop a task." followed by <h4> "Departments" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\bukubiz-sales.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Sales agent" above h1 "A pipeline that closes."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "Bukubiz · Sales" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [all-caps-body] text-transform: uppercase on 33 chars of body text
+    → Long passages in uppercase are hard to read. We recognize words by shape (ascenders and descenders), which 
+all-caps removes. Reserve uppercase for short labels and headings.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [undersized-ui-text] 9.92px functional text "guarded_auto" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [skipped-heading] <h2> "Stop losing leads to silence." followed by <h4> "Departments" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\bukubiz.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Business" above h1 "AI agents for every department."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [gpt-thin-border-wide-shadow] 1px border + 60px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [skipped-heading] <h2> "Put an agent on every department." followed by <h4> "Products" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\dentalos.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Use case" above h1 "The AI operating system for dental clinics."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [gpt-thin-border-wide-shadow] 1px border + 60px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [flat-type-hierarchy] Sizes: 11.5px, 11.8px, 13.8px, 14.1px, 14.4px, 15.2px, 16px, 16.3px, 17.6px, 19.2px (ratio 
+1.7:1)
+    → Font sizes are too close together — no clear visual hierarchy. Use fewer sizes with more contrast (aim for at 
+least a 1.25 ratio between steps).
+  [skipped-heading] <h2> "Bring AI agents into your clinic." followed by <h4> "Products" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\index.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "buku · the book" above h1 "AI agents for your money, personal and 
+business."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [undersized-ui-text] 10.56px functional text "agents" (below 11px floor)
+    → Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) 
+below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 
+11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 
+11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the 
+DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility 
+problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and 
+code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [gpt-thin-border-wide-shadow] 1px border + 50px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [skipped-heading] <h2> "Put AI to work for you." followed by <h4> "Products" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+G:\buku-pro\mybuku.html
+  [low-contrast] 1.1:1 (need 4.5:1) — text #f1e8d6 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 1.4:1 (need 4.5:1) — text #d9d0c2 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [low-contrast] 2.3:1 (need 4.5:1) — text #9aa4b9 on #f3f8fc
+    → Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast 
+between text and background.
+  [hero-eyebrow-chip] eyebrow chip (tracked-caps) "Personal AI" above h1 "Your money, run by AI."
+    → A tiny uppercase letter-spaced label sitting immediately above an oversized hero headline — or the same shape 
+rendered as a pill chip — is now the default AI SaaS hero. Drop the eyebrow, integrate the kicker into the headline, 
+or run it as a navigation breadcrumb instead.
+  [cramped-padding] <div> "dropdown": children flush against border on right (no inset)
+    → Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding 
+is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible 
+boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at 
+least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.
+  [gpt-thin-border-wide-shadow] 1px border + 60px shadow blur
+    → A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a 
+defined edge or a soft elevation — rather than both at once.
+  [flat-type-hierarchy] Sizes: 11.5px, 11.8px, 13.8px, 14.1px, 14.4px, 15.2px, 16px, 16.3px, 17.6px, 19.2px (ratio 
+1.7:1)
+    → Font sizes are too close together — no clear visual hierarchy. Use fewer sizes with more contrast (aim for at 
+least a 1.25 ratio between steps).
+  [skipped-heading] <h2> "Start your personal finances with myBuku." followed by <h4> "Products" (missing h3)
+    → Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for 
+navigation. Skipping levels breaks the document outline.
+  [pulsing-dot] .live-dot — 7x7px dot with infinite "live-ping" animation
+    → Small pulsing status dots simulate liveness decoratively. Reserve pulse animation for indicators tied to 
+genuinely live, changing data; a static indicator with clear labeling is honest and calmer.
+  [marquee] .ticker-track — infinite horizontal loop animation "ticker"
+    → Continuously auto-scrolling content demands attention it has not earned and hides half its content at any 
+moment. Reserve motion for content that changes; let readers move at their own pace.
+  [dark-glow] Zero-offset text-shadow glow (#d4af37)
+    → Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored 
+blurred shadow on a dark background — are the default "cool" look of AI-generated UIs. Use neutral elevation shadows 
+and subtle, purposeful lighting instead.
+  [repeating-stripes-gradient] repeating-gradient decorative stripes
+    → Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a 
+deliberate texture or leave the surface plain.
+
+198 anti-patterns found.
+
+── Advisory (not counted as failures) ──
+
+G:\buku-pro\bukubiz-finance.html
+  [em-dash-overuse] 8 em-dashes in body text
+    → Em-dash saturation in body copy is an AI cadence tell. Advisory only: humans use em-dashes legitimately, so this 
+fires only on saturation — at least 8 em-dashes (— or --) at a density near one per 500 characters of body text — 
+never on a long article that uses a few. Prefer commas, colons, periods, or parentheses.
+
+G:\buku-pro\bukubiz-marketing.html
+  [em-dash-overuse] 8 em-dashes in body text
+    → Em-dash saturation in body copy is an AI cadence tell. Advisory only: humans use em-dashes legitimately, so this 
+fires only on saturation — at least 8 em-dashes (— or --) at a density near one per 500 characters of body text — 
+never on a long article that uses a few. Prefer commas, colons, periods, or parentheses.
+
+2 advisory notes. Suppress with --no-advisory.

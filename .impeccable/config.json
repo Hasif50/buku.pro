@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [
+      "gradient-text",
+      "hero-eyebrow-chip",
+      "dark-glow",
+      "ai-color-palette",
+      "pulsing-dot"
+    ],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "createdAt": "2026-08-27T13:06:37.776Z",
+        "reason": "Brand font"
+      },
+      {
+        "rule": "overused-font",
+        "value": "fraunces",
+        "createdAt": "2026-08-27T13:06:37.838Z",
+        "reason": "Brand display font"
+      }
+    ]
+  }
+}
