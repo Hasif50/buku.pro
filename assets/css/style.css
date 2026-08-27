@@ -197,7 +197,8 @@ img { max-width: 100%; display: block; }
     radial-gradient(1.3px 1.3px at 48% 82%, rgba(255,255,255,0.45), transparent 50%),
     radial-gradient(1px 1px at 82% 88%, rgba(255,255,255,0.5), transparent 50%),
     radial-gradient(1.2px 1.2px at 92% 55%, rgba(255,255,255,0.4), transparent 50%),
-    radial-gradient(1px 1px at 6% 40%, rgba(255,255,255,0.4), transparent 50%);
+    radial-gradient(1px 1px at 6% 40%, rgba(255,255,255,0.4), transparent 50%),
+    repeating-linear-gradient(180deg, transparent 0 33px, rgba(241, 232, 214, 0.04) 33px 34px);
 }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 .hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
@@ -307,11 +308,6 @@ img { max-width: 100%; display: block; }
 .section-head { max-width: 640px; margin-bottom: 44px; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head .lead { margin-top: 14px; }
-.section-head::before {
-  content: ""; display: block; width: 42px; height: 2px; margin-bottom: 20px;
-  background: var(--grad); border-radius: 2px; opacity: 0.9;
-}
-.section-head.center::before { margin-left: auto; margin-right: auto; }
 
 .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
@@ -710,6 +706,29 @@ body::after {
 .chapter-copy p { color: var(--muted); line-height: 1.6; }
 
 @media (max-width: 900px) { .chapters-stage { grid-template-columns: 1fr; } }
+
+/* ---------- Book expression: chapter page + drop cap + fleuron ---------- */
+.section-head.chapters-head { text-align: left; }
+.chapters-head .lead { margin-left: 0; margin-right: 0; text-align: left; }
+.chapters-head .lead::first-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.4em;
+  line-height: 0.78;
+  color: var(--accent);
+  float: left;
+  padding-right: 0.14em;
+  padding-top: 0.05em;
+}
+.fleuron {
+  text-align: center;
+  color: var(--accent);
+  font-size: 1.15rem;
+  line-height: 1;
+  margin: 30px 0 38px;
+  opacity: 0.75;
+  text-indent: 0.35em;
+}
 
 /* ---------- Page transitions: native ink-wipe between pages ---------- */
 @view-transition {
