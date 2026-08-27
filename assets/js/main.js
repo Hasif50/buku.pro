@@ -5,6 +5,9 @@
 (function () {
   "use strict";
 
+  // Progressive enhancement: hidden reveal states only apply once JS is active.
+  document.documentElement.classList.add("js");
+
   // Mobile nav toggle
   var toggle = document.getElementById("navToggle");
   var links = document.getElementById("navLinks");

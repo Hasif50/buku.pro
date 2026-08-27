@@ -347,7 +347,7 @@ img { max-width: 100%; display: block; }
 .page-hero .container { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 
 /* reveal */
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- responsive ---------- */
@@ -667,7 +667,7 @@ body::after {
 
 /* ---------- Book motion: ink-writing reveals ---------- */
 /* Section headings write in from the top like ink filling the page. */
-.ink { opacity: 0; }
+.js .ink { opacity: 0; }
 .ink.in { opacity: 1; animation: ink-write 1.1s cubic-bezier(0.65, 0, 0.35, 1) both; }
 @keyframes ink-write {
   from { clip-path: inset(0 0 100% 0); }
@@ -675,7 +675,7 @@ body::after {
 }
 
 /* Fade + rise for chapter eyebrows, the fleuron, and other accents. */
-.fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js .fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-in.in { opacity: 1; transform: none; }
 
 /* Hero copy rises in sequence after the ink-reveal of the title. */
@@ -692,7 +692,7 @@ body::after {
 }
 
 /* The fleuron turns in like a printer's ornament. */
-.fleuron.fade-in { transform: rotate(-10deg) scale(0.9); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js .fleuron.fade-in { transform: rotate(-10deg) scale(0.9); transition: opacity 0.8s ease, transform 0.8s ease; }
 .fleuron.fade-in.in { transform: rotate(0deg) scale(1); }
 
 /* New ledger lines ink in as they appear. */
@@ -728,7 +728,7 @@ body::after {
 /* ---------- Micro-interactions: brand mark glint, drawing rules ---------- */
 .brand-mark { transition: transform 0.35s ease, filter 0.35s ease; }
 .brand:hover .brand-mark { transform: rotate(-4deg) scale(1.06); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
-.eyebrow::before { transform: scaleX(0); transform-origin: left; transition: transform 0.55s ease 0.3s; }
+.js .eyebrow::before { transform: scaleX(0); transform-origin: left; transition: transform 0.55s ease 0.3s; }
 .eyebrow.in::before { transform: scaleX(1); }
 .hero-copy .eyebrow::before { animation: rule-draw 0.55s ease 0.5s both; }
 @keyframes rule-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
