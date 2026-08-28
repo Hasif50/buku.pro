@@ -7,18 +7,10 @@
   <meta name="description" content="buku.pro builds AI agents for the work behind every business. Finance, marketing, sales, and operations, handled for you.">
   <meta name="theme-color" content="#0b6bcb">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d4af37'/%3E%3Cpath d='M16 8 C13.5 6.6 10 6 6.5 6 L6.5 24 C10 24 13.5 24.6 16 26 C18.5 24.6 22 24 25.5 24 L25.5 6 C22 6 18.5 6.6 16 8 Z' fill='none' stroke='%230b0f1e' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 8 L16 26' stroke='%230b0f1e' stroke-width='2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><i></i></div>
-  <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader-mark">
-      <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#131a2e" stroke="#232b40"/><path d="M24 12 C20.5 9.9 15.5 9 10.5 9 L10.5 34 C15.5 34 20.5 34.8 24 37 C27.5 34.8 32.5 34 37.5 34 L37.5 9 C32.5 9 27.5 9.9 24 12 Z" fill="none" stroke="#d4af37" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 12 L24 37" stroke="#d4af37" stroke-width="2.6"/></svg>
-    </div>
-    <span class="preloader-word">opening the book</span>
-    <div class="preloader-bar"><i></i></div>
-    <span class="preloader-pct">0</span>
-  </div>
 
   <header class="nav">
     <div class="container nav-inner">
@@ -43,47 +35,32 @@
   </header>
 
   <main>
-    <!-- The book: a sticky reading device. Scroll turns the pages. -->
-    <section class="book-read" id="read">
-      <div class="book-sticky">
-        <canvas class="dotbook" id="dotbook" aria-hidden="true"></canvas>
-
-        <div class="book-face face-intro" data-face="0">
-          <span class="eyebrow">buku · the book</span>
-          <h1 class="display">AI agents for your <span class="grad">money</span>, personal and business.</h1>
-          <p class="lead">AI that helps. myBuku for your personal money, Bukubiz for your business. One platform of agents doing the work, so you don't have to.</p>
+    <!-- 01 · The ledger — typography first, the product panel beside it. -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="running-head"><span class="folio">01</span>buku.pro &mdash; the ledger</span>
+          <h1 class="display">Your money and business, written into <span class="grad">one book</span>.</h1>
+          <p class="lead">AI agents keep the ledger for you. myBuku looks after your personal money, Bukubiz runs your business &mdash; every entry made, filed, and reconciled while you rest.</p>
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" href="#get-started">Get started</a>
-            <a class="btn btn-ghost btn-lg" href="#products">See the products</a>
+            <a class="btn btn-ghost btn-lg" href="#products">For your business &rarr;</a>
           </div>
-          <div class="ledger" aria-hidden="true">
-            <div class="ledger-head"><span class="live-dot"></span><span>the book writes itself</span></div>
-            <div class="ledger-lines" id="ledgerLines">
-              <div class="lline"><span class="t">09:41</span><span class="agent">finance</span><span class="task">reconciling invoices</span><span class="chip done">done</span></div>
-              <div class="lline"><span class="t">09:42</span><span class="agent">marketing</span><span class="task">drafting recall campaign</span><span class="chip work">working</span></div>
-              <div class="lline"><span class="t">09:43</span><span class="agent">operations</span><span class="task">checking inventory</span><span class="chip queue">queued</span></div>
-            </div>
+          <div class="mono-status" aria-hidden="true">mybuku &middot; bukubiz &middot; one shelf &middot; waitlist open</div>
+        </div>
+        <div class="ledger-panel reveal" aria-label="The ledger at work">
+          <div class="panel-head">
+            <span class="panel-title">today&rsquo;s ledger</span>
+            <span class="panel-date">24/7</span>
           </div>
-        </div>
-
-        <div class="book-face face-chapter" data-face="1">
-          <span class="eyebrow">Chapter 01 · Products</span>
-          <h2 class="h2">Two products, one platform</h2>
-          <p class="lead">Bukubiz runs the business with AI agents. myBuku looks after your personal money.</p>
-        </div>
-        <div class="book-face face-chapter" data-face="2">
-          <span class="eyebrow">Chapter 02 · Use cases</span>
-          <h2 class="h2">Use cases</h2>
-          <p class="lead">Bukubiz is one set of agents (Finance, Marketing, Sales, Operations), applied to any industry. DentalOS AI is the first use case: those same agents, configured for a dental clinic.</p>
-        </div>
-        <div class="book-face face-chapter" data-face="3">
-          <span class="eyebrow">Chapter 03 · The chapters</span>
-          <h2 class="h2">buku means <span class="grad">book</span>.</h2>
-          <p class="lead">Your money and your business, written into one book. myBuku writes the personal pages, Bukubiz writes the business pages, and AI agents do the writing.</p>
-        </div>
-        <div class="book-face face-chapter" data-face="4">
-          <h2 class="h2">The book never sleeps.</h2>
-          <p class="lead">24/7 agents, one ledger, every page written and filed while you rest.</p>
+          <div class="panel-rows">
+            <div class="prow"><span class="prow-t">09:41</span><span class="prow-agent">finance</span><span class="prow-task">reconciling invoices</span><span class="pchip done">done</span></div>
+            <div class="prow"><span class="prow-t">09:42</span><span class="prow-agent">marketing</span><span class="prow-task">drafting recall campaign</span><span class="pchip work">working</span></div>
+            <div class="prow"><span class="prow-t">09:43</span><span class="prow-agent">operations</span><span class="prow-task">checking inventory</span><span class="pchip queue">queued</span></div>
+            <div class="prow"><span class="prow-t">09:44</span><span class="prow-agent">sales</span><span class="prow-task">scheduling follow-ups</span><span class="pchip done">done</span></div>
+          </div>
+          <div class="panel-total"><span>balance, all books</span><span class="panel-amount">RM&nbsp;24,107.90</span></div>
+          <div class="panel-foot">the book writes itself</div>
         </div>
       </div>
     </section>
@@ -91,7 +68,7 @@
     <section class="section section-soft" id="products">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow fade-in">Chapter 01 · Products</span>
+          <span class="running-head"><span class="folio">02</span>Chapter &middot; The products</span>
           <h2 class="h2 ink">Two products, one platform</h2>
           <p class="lead">Bukubiz runs the business with AI agents. myBuku looks after your personal money.</p>
         </div>
@@ -120,8 +97,8 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow fade-in">Chapter 02 · Use cases</span>
-          <h2 class="h2 ink">Use cases</h2>
+          <span class="running-head"><span class="folio">03</span>Chapter &middot; Use cases</span>
+          <h2 class="h2 ink">One set of agents, any industry</h2>
           <p class="lead">Bukubiz is one set of agents (Finance, Marketing, Sales, Operations), applied to any industry. DentalOS AI is the first use case: those same agents, configured for a dental clinic.</p>
         </div>
         <article class="product-card reveal" style="flex-direction:row;align-items:center;gap:24px;flex-wrap:wrap;">
@@ -138,28 +115,27 @@
     <section class="section section-soft chapters" id="chapters">
       <div class="container">
         <div class="section-head center chapters-head" style="max-width:720px;">
-          <span class="eyebrow fade-in">Chapter 03 · The chapters</span>
+          <span class="running-head"><span class="folio">04</span>Chapter &middot; The chapters</span>
           <h2 class="h2 ink">buku means <span class="grad">book</span>.</h2>
           <p class="lead">Your money and your business, written into one book. myBuku writes the personal pages, Bukubiz writes the business pages, and AI agents do the writing.</p>
         </div>
-        <div class="fleuron fade-in" aria-hidden="true">&#10086;</div>
         <div class="chapters-stage">
           <article class="chapter reveal">
-            <span class="chapter-num">01</span>
+            <span class="chapter-num">I</span>
             <div class="chapter-copy">
               <h3>The book</h3>
               <p>One place where your money and business are recorded, clearly.</p>
             </div>
           </article>
           <article class="chapter reveal">
-            <span class="chapter-num">02</span>
+            <span class="chapter-num">II</span>
             <div class="chapter-copy">
               <h3>The agents</h3>
               <p>AI agents that do the work, across every department and your personal money.</p>
             </div>
           </article>
           <article class="chapter reveal">
-            <span class="chapter-num">03</span>
+            <span class="chapter-num">III</span>
             <div class="chapter-copy">
               <h3>The chapters</h3>
               <p>Personal (myBuku), business (Bukubiz), and industry use cases like DentalOS AI.</p>
@@ -169,10 +145,38 @@
       </div>
     </section>
 
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="running-head"><span class="folio">05</span>Chapter &middot; Questions</span>
+          <h2 class="h2 ink">Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is buku.pro?</summary>
+            <p>One platform of AI agents for your money and your business. myBuku handles personal finances; Bukubiz runs a business&rsquo;s departments with AI agents.</p>
+          </details>
+          <details class="faq-item">
+            <summary>When can I use it?</summary>
+            <p>Bukubiz is opening to a waitlist soon. Join below and we&rsquo;ll tell you the moment the doors open.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is my data safe?</summary>
+            <p>Your ledger is yours. Data is scoped to your account, agents act on explicit permissions, and secrets never leave server-side handling.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do the agents get paid?</summary>
+            <p>Agents work for you. Billing is transparent and handled through ToyyibPay when it applies &mdash; no surprises in the ledger.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="get-started">
       <div class="container">
         <div class="cta-band reveal">
           <div>
+            <span class="running-head"><span class="folio">06</span>Chapter &middot; The close</span>
             <h2>Put AI to work for you.</h2>
             <p>Join the waitlist and be first to know when Bukubiz opens its doors.</p>
           </div>
@@ -208,7 +212,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 buku.pro. All rights reserved.</span>
-        <span>buku · the book</span>
+        <span>buku &middot; the book</span>
       </div>
     </div>
   </footer>
