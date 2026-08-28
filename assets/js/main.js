@@ -118,71 +118,186 @@
     });
   }
 
-  // The book of dots — a 3D point-cloud book that turns like a globe.
-  var dotCanvas = document.querySelector(".dotbook");
-  if (dotCanvas && !reduceMotion) {
-    var dctx = dotCanvas.getContext("2d");
+  // The book — a sticky reading device. Scroll turns the pages; the book
+  // does not rotate. Each flip moves one page from the right to the left,
+  // revealing the next chapter beneath it.
+  var bookCanvas = document.querySelector(".dotbook");
+  if (bookCanvas) {
+    var bctx = bookCanvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    function sizeDotbook() {
-      dotCanvas.width = dotCanvas.offsetWidth * dpr;
-      dotCanvas.height = dotCanvas.offsetHeight * dpr;
-      dctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var bookW = 0, bookH = 0;
+    function sizeBook() {
+      bookW = bookCanvas.offsetWidth;
+      bookH = bookCanvas.offsetHeight;
+      bookCanvas.width = bookW * dpr;
+      bookCanvas.height = bookH * dpr;
+      bctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
-    sizeDotbook();
-    window.addEventListener("resize", sizeDotbook);
+    sizeBook();
+    window.addEventListener("resize", sizeBook);
 
-    // Book point cloud: covers, spine, fore-edge, top & bottom edges.
-    var pts = [];
-    var W = 2.6, H = 3.4, D = 0.6, step = 0.13;
-    for (var x = -W / 2; x <= W / 2; x += step) {
-      for (var y = -H / 2; y <= H / 2; y += step) {
-        pts.push([x, y, -D / 2], [x, y, D / 2]);
+    // Pages as unit-space dot fields. Kinds: 0 body, 1 line, 2 cover, 3 edge.
+    function buildPage(opts) {
+      var pts = [];
+      var m = 0.06, step = opts.cover ? 0.042 : 0.055;
+      for (var v = m; v <= 1 - m; v += step) {
+        for (var u = m; u <= 1 - m; u += step) {
+          pts.push([u, v, opts.cover ? 2 : 0]);
+        }
+      }
+      if (!opts.cover) {
+        (opts.lines || []).forEach(function (lv) {
+          for (var u = 0.14; u <= 0.9; u += 0.024) pts.push([u, lv, 1]);
+        });
+      }
+      for (var ue = m; ue <= 1 - m; ue += 0.03) {
+        pts.push([ue, m, 3], [ue, 1 - m, 3]);
+      }
+      for (var ve = m; ve <= 1 - m; ve += 0.03) {
+        pts.push([m, ve, 3], [1 - m, ve, 3]);
+      }
+      return pts;
+    }
+
+    var pages = [
+      buildPage({ cover: true }),                        // 0 cover
+      buildPage({ lines: [0.30, 0.44, 0.58, 0.72] }),    // 1 chapter 01
+      buildPage({ lines: [0.26, 0.40, 0.54, 0.68, 0.80] }), // 2 chapter 02
+      buildPage({ lines: [0.32, 0.46, 0.60, 0.74] }),    // 3 chapter 03
+      buildPage({ lines: [0.44, 0.56] })                 // 4 colophon
+    ];
+
+    var readSection = document.getElementById("read");
+    var faces = Array.prototype.slice.call(document.querySelectorAll(".book-face"));
+    var faceOn = [];
+    var bookRunning = true;
+    var bookReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var bookObs = new IntersectionObserver(function (entries) {
+      bookRunning = entries[0].isIntersecting;
+      if (bookRunning && !bookReduceMotion) requestAnimationFrame(drawBook);
+    }, { threshold: 0.02 });
+    bookObs.observe(bookCanvas);
+
+    function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+    function easeInOut(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+    var FLIPS = [0.125, 0.375, 0.625, 0.875], HW = 0.085;
+    function flipAngle(p, ci) {
+      return Math.PI * easeInOut(clamp01((p - (ci - HW)) / (2 * HW)));
+    }
+    function getProgress() {
+      var r = readSection.getBoundingClientRect();
+      var total = r.height - window.innerHeight;
+      return total > 0 ? clamp01(-r.top / total) : 0;
+    }
+
+    // Draw one page. theta=0 -> right side full; theta=PI -> settled left.
+    function drawPage(page, spine, pageW, pageH, cy, theta, baseR, alphaMul, time) {
+      var front = theta < Math.PI / 2;
+      var c = Math.abs(Math.cos(theta));
+      var side = front ? 1 : -1;
+      var backRamp = front ? 1 : 0.45 + 0.55 * clamp01((theta - Math.PI / 2) / (Math.PI / 2));
+      var flicker = Math.sin(time * 0.0016);
+      for (var i = 0; i < page.length; i++) {
+        var u = page[i][0], v = page[i][1], kind = page[i][2];
+        var sx = spine + side * u * pageW * c;
+        var sy = cy + (v - 0.5) * pageH;
+        var col, a;
+        if (kind === 2) { col = "#d4af37"; a = 0.55 + 0.25 * Math.sin(time * 0.001 + (u + v) * 9 + flicker); }
+        else if (kind === 3) { col = "#d4af37"; a = 0.5; }
+        else if (kind === 1) { col = "#6fa8dc"; a = 0.95; }
+        else { col = "#6fa8dc"; a = 0.42; }
+        bctx.globalAlpha = a * alphaMul * backRamp;
+        bctx.fillStyle = col;
+        bctx.beginPath();
+        bctx.arc(sx, sy, Math.max(0.4, baseR * (0.3 + 0.7 * c)), 0, Math.PI * 2);
+        bctx.fill();
       }
     }
-    for (var y = -H / 2; y <= H / 2; y += 0.09) {
-      pts.push([-W / 2, y, 0], [W / 2, y, 0]);
-    }
-    for (var x = -W / 2; x <= W / 2; x += 0.09) {
-      pts.push([x, -H / 2, 0], [x, H / 2, 0]);
-    }
 
-    var angle = 0, running = true;
-    var dotObs = new IntersectionObserver(function (entries) {
-      running = entries[0].isIntersecting;
-      if (running) requestAnimationFrame(drawDotbook);
-    }, { threshold: 0.05 });
-    dotObs.observe(dotCanvas);
-
-    function drawDotbook() {
-      if (!running) return;
-      angle += 0.0045;
-      var w = dotCanvas.width / dpr, h = dotCanvas.height / dpr;
-      dctx.clearRect(0, 0, w, h);
-      var cx = w / 2, cy = h / 2;
-      var scale = Math.min(w, h) / 6.4;
-      var cosA = Math.cos(angle), sinA = Math.sin(angle);
-      var tilt = 0.32, cosT = Math.cos(tilt), sinT = Math.sin(tilt);
-      var persp = 6.5;
-      for (var i = 0; i < pts.length; i++) {
-        var p = pts[i];
-        var x1 = p[0] * cosA - p[2] * sinA;
-        var z1 = p[0] * sinA + p[2] * cosA;
-        var y2 = p[1] * cosT - z1 * sinT;
-        var z2 = p[1] * sinT + z1 * cosT;
-        var k = persp / (persp + z2);
-        var sx = cx + x1 * scale * k;
-        var sy = cy + y2 * scale * k;
-        var edge = Math.abs(Math.abs(p[0]) - W / 2) < 0.001 || Math.abs(Math.abs(p[1]) - H / 2) < 0.001;
-        dctx.globalAlpha = Math.max(0.12, 0.35 + 0.55 * ((z2 + D) / (2 * D)));
-        dctx.fillStyle = z2 > 0 ? (edge ? "#e9c766" : "#d4af37") : "#6fa8dc";
-        dctx.beginPath();
-        dctx.arc(sx, sy, Math.max(0.5, 1.35 * k), 0, Math.PI * 2);
-        dctx.fill();
+    function drawSpine(spine, cy, pageH) {
+      for (var y = cy - pageH / 2; y <= cy + pageH / 2; y += 6) {
+        bctx.globalAlpha = 0.7;
+        bctx.fillStyle = "#d4af37";
+        bctx.beginPath();
+        bctx.arc(spine, y, 1.1, 0, Math.PI * 2);
+        bctx.fill();
       }
-      dctx.globalAlpha = 1;
-      requestAnimationFrame(drawDotbook);
+      bctx.globalAlpha = 1;
     }
-    requestAnimationFrame(drawDotbook);
+
+    var lastP = -1;
+    function drawBook() {
+      if (!bookRunning) return;
+      var w = bookCanvas.width / dpr, h = bookCanvas.height / dpr;
+      var t = performance.now();
+      bctx.clearRect(0, 0, w, h);
+      var p = getProgress();
+      var spine = w / 2;
+      var pageW = Math.min(w * 0.30, h * 0.42);
+      var pageH = pageW * 1.28;
+      var cy = h * 0.52;
+      var baseR = Math.max(1.1, pageW / 260);
+
+      var th = FLIPS.map(function (c) { return flipAngle(p, c); });
+      var midFlip = -1;
+      for (var i = 0; i < th.length; i++) {
+        if (th[i] > 0.001 && th[i] < Math.PI - 0.001) { midFlip = i; break; }
+      }
+
+      if (midFlip === -1 && th[0] < 0.001) {
+        // Closed book: the cover as one panel, spine in the middle.
+        drawPage(pages[0], spine - pageW, pageW * 2, pageH, cy, 0, baseR, 1, t);
+        drawSpine(spine, cy, pageH);
+      } else {
+        if (midFlip === -1) {
+          // Settled: left = last flipped page, right = the page being read.
+          var done = 0;
+          for (var d = 0; d < th.length; d++) { if (th[d] >= Math.PI - 0.001) done = d + 1; }
+          if (done === 0) {
+            // Before the cover moves: still a closed book.
+            drawPage(pages[0], spine - pageW, pageW * 2, pageH, cy, 0, baseR, 1, t);
+          } else {
+            drawPage(pages[done - 1], spine, pageW, pageH, cy, Math.PI, baseR, 1, t); // left
+            drawPage(pages[done], spine, pageW, pageH, cy, 0, baseR, 1, t);           // right
+          }
+        } else {
+          if (midFlip > 0) drawPage(pages[midFlip - 1], spine, pageW, pageH, cy, Math.PI, baseR, 1, t);
+          drawPage(pages[midFlip + 1], spine, pageW, pageH, cy, 0, baseR, 1, t);  // under-page
+          drawPage(pages[midFlip], spine, pageW, pageH, cy, th[midFlip], baseR, 1, t); // flipping
+        }
+        drawSpine(spine, cy, pageH);
+      }
+
+      // Faces: the caption of the page you're reading.
+      var windows = [
+        [0.00, 0.10], // intro (cover closed)
+        [0.20, 0.43], // chapter 01
+        [0.45, 0.68], // chapter 02
+        [0.70, 0.93], // chapter 03
+        [0.95, 1.01]  // colophon
+      ];
+      for (var f = 0; f < faces.length; f++) {
+        var on = p >= windows[f][0] && p < windows[f][1];
+        if (on !== faceOn[f]) {
+          faceOn[f] = on;
+          faces[f].classList.toggle("on", on);
+        }
+      }
+      lastP = p;
+      requestAnimationFrame(drawBook);
+    }
+
+    if (bookReduceMotion) {
+      // One static frame: the closed cover. Faces stack via CSS.
+      var w0 = bookCanvas.width / dpr, h0 = bookCanvas.height / dpr;
+      bctx.clearRect(0, 0, w0, h0);
+      var pageW0 = Math.min(w0 * 0.30, h0 * 0.42), pageH0 = pageW0 * 1.28;
+      drawPage(pages[0], w0 / 2 - pageW0, pageW0 * 2, pageH0, h0 * 0.52, 0, Math.max(1.1, pageW0 / 260), 1, 0);
+      drawSpine(w0 / 2, h0 * 0.52, pageH0);
+      faces.forEach(function (el) { el.classList.add("on"); });
+    } else {
+      requestAnimationFrame(drawBook);
+    }
   }
 
   // Live ledger feed — the book writes itself.

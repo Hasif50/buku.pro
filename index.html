@@ -43,10 +43,12 @@
   </header>
 
   <main>
-    <section class="hero page">
-      <canvas class="dotbook" aria-hidden="true"></canvas>
-      <div class="container hero-centered">
-        <div class="hero-copy reveal">
+    <!-- The book: a sticky reading device. Scroll turns the pages. -->
+    <section class="book-read" id="read">
+      <div class="book-sticky">
+        <canvas class="dotbook" id="dotbook" aria-hidden="true"></canvas>
+
+        <div class="book-face face-intro" data-face="0">
           <span class="eyebrow">buku · the book</span>
           <h1 class="display">AI agents for your <span class="grad">money</span>, personal and business.</h1>
           <p class="lead">AI that helps. myBuku for your personal money, Bukubiz for your business. One platform of agents doing the work, so you don't have to.</p>
@@ -63,10 +65,30 @@
             </div>
           </div>
         </div>
+
+        <div class="book-face face-chapter" data-face="1">
+          <span class="eyebrow">Chapter 01 · Products</span>
+          <h2 class="h2">Two products, one platform</h2>
+          <p class="lead">Bukubiz runs the business with AI agents. myBuku looks after your personal money.</p>
+        </div>
+        <div class="book-face face-chapter" data-face="2">
+          <span class="eyebrow">Chapter 02 · Use cases</span>
+          <h2 class="h2">Use cases</h2>
+          <p class="lead">Bukubiz is one set of agents (Finance, Marketing, Sales, Operations), applied to any industry. DentalOS AI is the first use case: those same agents, configured for a dental clinic.</p>
+        </div>
+        <div class="book-face face-chapter" data-face="3">
+          <span class="eyebrow">Chapter 03 · The chapters</span>
+          <h2 class="h2">buku means <span class="grad">book</span>.</h2>
+          <p class="lead">Your money and your business, written into one book. myBuku writes the personal pages, Bukubiz writes the business pages, and AI agents do the writing.</p>
+        </div>
+        <div class="book-face face-chapter" data-face="4">
+          <h2 class="h2">The book never sleeps.</h2>
+          <p class="lead">24/7 agents, one ledger, every page written and filed while you rest.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section-soft page" id="products">
+    <section class="section section-soft" id="products">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow fade-in">Chapter 01 · Products</span>
@@ -95,7 +117,7 @@
       </div>
     </section>
 
-    <section class="section page">
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow fade-in">Chapter 02 · Use cases</span>
@@ -113,7 +135,7 @@
       </div>
     </section>
 
-    <section class="section section-soft chapters page" id="chapters">
+    <section class="section section-soft chapters" id="chapters">
       <div class="container">
         <div class="section-head center chapters-head" style="max-width:720px;">
           <span class="eyebrow fade-in">Chapter 03 · The chapters</span>
@@ -147,7 +169,7 @@
       </div>
     </section>
 
-    <section class="section page" id="get-started">
+    <section class="section" id="get-started">
       <div class="container">
         <div class="cta-band reveal">
           <div>

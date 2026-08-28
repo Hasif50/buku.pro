@@ -42,7 +42,7 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; scroll-snap-type: y mandatory; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -180,39 +180,55 @@ img { max-width: 100%; display: block; }
 .dropdown a { display: block; padding: 9px 12px; border-radius: 9px; font-size: 0.92rem; color: var(--muted); }
 .dropdown a:hover { background: var(--accent-soft); color: var(--accent); }
 
-/* ---------- hero ---------- */
-.hero { padding: 104px 0 120px; position: relative; overflow: hidden; }
-.hero::before { display: none; } /* replaced by the dot-book */
-.hero::before {
-  content: "";
-  position: absolute; inset: 0; pointer-events: none; animation: twinkle 10s ease-in-out infinite;
-  background:
-    radial-gradient(720px 420px at 78% 12%, rgba(111, 168, 220, 0.10), transparent 62%),
-    radial-gradient(560px 320px at 12% 88%, rgba(212, 175, 55, 0.09), transparent 62%),
-    radial-gradient(1.2px 1.2px at 18% 22%, rgba(255,255,255,0.9), transparent 50%),
-    radial-gradient(1px 1px at 42% 8%, rgba(255,255,255,0.6), transparent 50%),
-    radial-gradient(1.4px 1.4px at 68% 18%, rgba(255,255,255,0.8), transparent 50%),
-    radial-gradient(1px 1px at 88% 30%, rgba(255,255,255,0.5), transparent 50%),
-    radial-gradient(1.2px 1.2px at 30% 40%, rgba(255,255,255,0.5), transparent 50%),
-    radial-gradient(1px 1px at 55% 48%, rgba(255,255,255,0.4), transparent 50%),
-    radial-gradient(1.6px 1.6px at 75% 62%, rgba(255,255,255,0.6), transparent 50%),
-    radial-gradient(1px 1px at 10% 70%, rgba(255,255,255,0.5), transparent 50%),
-    radial-gradient(1.3px 1.3px at 48% 82%, rgba(255,255,255,0.45), transparent 50%),
-    radial-gradient(1px 1px at 82% 88%, rgba(255,255,255,0.5), transparent 50%),
-    radial-gradient(1.2px 1.2px at 92% 55%, rgba(255,255,255,0.4), transparent 50%),
-    radial-gradient(1px 1px at 6% 40%, rgba(255,255,255,0.4), transparent 50%);
+/* ---------- The book: sticky, scroll turns the pages ---------- */
+/* No-JS fallback: the book and its faces read as normal flow content. */
+.book-sticky { position: static; }
+.dotbook {
+  display: block;
+  margin: 48px auto 0;
+  width: min(64vw, 560px);
+  height: min(60vh, 640px);
+  pointer-events: none;
+  opacity: 0.9;
 }
-.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
-.hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.book-face { position: static; max-width: 680px; margin: 30px auto; text-align: center; padding: 0 24px; }
+.book-face .h2 { margin: 10px 0 14px; }
+.book-face .lead { margin-left: auto; margin-right: auto; }
+.book-face .eyebrow::before { transform: scaleX(1); } /* rule always drawn in faces */
 
-/* Clean, centered hero */
-.hero-centered { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
-.hero-centered .hero-copy { align-items: center; text-align: center; }
-.hero-centered .lead { margin-left: auto; margin-right: auto; }
-.hero-centered .ledger { margin-left: auto; margin-right: auto; text-align: left; }
-.hero::after { display: none; }   /* remove aurora blobs */
-.display::after { display: none; } /* remove foil sweep */
+.js .book-read { position: relative; height: 400vh; } /* four page-turns: cover, 01, 02, 03, colophon */
+.js .book-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; z-index: 1; }
+.js .dotbook {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: min(64vw, 560px);
+  height: min(60vh, 640px);
+  margin: 0;
+}
+.js .book-face {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: auto;
+  max-width: 680px;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.js .book-face.on { opacity: 1; }
+.face-intro { top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; }
+.face-intro .lead { max-width: 54ch; }
+.face-intro .ledger { margin-left: auto; margin-right: auto; text-align: left; }
+.face-chapter { top: 14%; }
+
+.hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
 .constellation .const-label { fill: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; }
 .constellation .nodes circle {
@@ -369,7 +385,8 @@ img { max-width: 100%; display: block; }
   .dropdown a { padding: 10px 0; }
   .cta-band { padding: 40px 28px; }
   .nav-cta .btn-primary { padding: 10px 16px; font-size: 0.88rem; }
-  .hero { padding: 46px 0 56px; }
+  .js .dotbook { width: min(78vw, 520px); height: min(52vh, 560px); top: 55%; }
+  .face-chapter { top: 10%; }
   .page-hero { padding: 46px 0 40px; }
 }
 @media (max-width: 560px) {
@@ -380,14 +397,14 @@ img { max-width: 100%; display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; scroll-snap-type: none; }
+  html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .product-card, .btn, .feature { transition: none; }
   .ticker-track { animation: none; } /* legacy, unused */
   .constellation .nodes circle { animation: none; }
   .grad { animation: none; }
   .constellation g line { animation: none; stroke-dashoffset: 0; }
-  .hero::before, .page-hero::before { animation: none; }
+  .page-hero::before { animation: none; }
   .ink { opacity: 1; }
   .ink.in { animation: none; }
   .eyebrow::before { transform: scaleX(1); }
@@ -397,6 +414,12 @@ img { max-width: 100%; display: block; }
   .chapters-head .lead::first-letter { animation: none; }
   .lline { animation: none; }
   .product-card::after { display: none; }
+  /* The book: static pages, faces stacked in flow. */
+  .js .book-read { height: auto; }
+  .js .book-sticky { position: static; height: auto; overflow: visible; }
+  .js .dotbook { position: relative; left: auto; top: auto; transform: none; width: min(64vw, 560px); height: min(56vh, 620px); margin: 40px auto 0; }
+  .js .book-face { position: static; transform: none; margin: 26px auto; opacity: 1; }
+  .face-intro { display: flex; }
 }
 
 /* ---------- final polish: vellum grain + gold shimmer ---------- */
@@ -499,19 +522,7 @@ body::after {
 
 /* Gold-foil sweep across display headings (the gilding catching light) */
 .display { position: relative; }
-.display::after {
-  content: "";
-  position: absolute;
-  inset: -0.06em 0;
-  background: linear-gradient(105deg, transparent 34%, rgba(244,220,143,0.09) 47%, rgba(233,199,102,0.16) 50%, rgba(244,220,143,0.09) 53%, transparent 66%);
-  background-size: 220% 100%;
-  animation: foil-sweep 8s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes foil-sweep {
-  0% { background-position: 130% 0; }
-  60%, 100% { background-position: -30% 0; }
-}
+.display::after { display: none; } /* foil sweep disabled: keep the book calm */
 
 /* Ink-reveal: the book writes the hero line */
 .hero-copy .display {
@@ -593,24 +604,6 @@ body::after {
   .preloader-bar i { transform: none; }
 }
 
-/* ---------- Aurora blobs: slow-drifting light fields behind the hero ---------- */
-.hero::after {
-  content: "";
-  position: absolute; inset: -12% -8%; z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(42% 34% at 82% 18%, rgba(111, 168, 220, 0.17), transparent 62%),
-    radial-gradient(36% 30% at 12% 80%, rgba(212, 175, 55, 0.13), transparent 62%),
-    radial-gradient(30% 26% at 55% 42%, rgba(79, 209, 165, 0.08), transparent 62%);
-  filter: blur(42px);
-  animation: aurora-drift 24s ease-in-out infinite alternate;
-  will-change: transform;
-}
-@keyframes aurora-drift {
-  from { transform: translate3d(-2%, -1%, 0) scale(1); }
-  to { transform: translate3d(2%, 2%, 0) scale(1.07); }
-}
-
 /* Ambient starlight — twinkling, drifting stars behind the hero. */
 .starfield {
   position: absolute; inset: 0; z-index: 0;
@@ -621,9 +614,6 @@ body::after {
 /* ---------- Scroll progress (gold hairline) ---------- */
 .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 95; pointer-events: none; }
 .scroll-progress i { display: block; height: 100%; width: 100%; background: var(--grad); transform: scaleX(0); transform-origin: 0 50%; }
-
-/* ---------- Split-text words (hero headline) ---------- */
-.hero-copy .display .word { display: inline-block; }
 
 /* ---------- Chapters ---------- */
 .chapters-stage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -709,15 +699,8 @@ body::after {
 }
 .product-card:hover::after { transform: translateX(100%); }
 
-/* ---------- The book of dots (hero point-cloud) ---------- */
-.dotbook {
-  position: absolute; inset: 0; z-index: 0;
-  width: 100%; height: 100%;
-  display: block; pointer-events: none; opacity: 0.85;
-}
-
-/* ---------- Scroll turns the pages ---------- */
-.page { min-height: 100vh; scroll-snap-align: start; scroll-snap-stop: always; display: flex; align-items: center; }
+/* ---------- The book of dots (sticky reading stage) ---------- */
+/* .dotbook sizing lives with .book-sticky above; JS renders the pages. */
 
 /* ---------- Ledger stats: figures count up like totals ---------- */
 .stats { display: flex; justify-content: center; align-items: flex-start; gap: 72px; flex-wrap: wrap; margin-bottom: 44px; }
