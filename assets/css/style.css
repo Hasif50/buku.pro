@@ -228,7 +228,7 @@ img { max-width: 100%; display: block; }
 }
 .prow-t { color: var(--muted); width: 44px; flex-shrink: 0; }
 .prow-agent { color: var(--blue); font-weight: 600; width: 96px; flex-shrink: 0; }
-.prow-task { color: var(--muted); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prow-task { color: var(--muted); flex: 1; min-width: 0; line-height: 1.4; }
 .pchip { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; margin-left: auto; flex-shrink: 0; }
 .pchip.done { color: #7fd1a8; background: rgba(79, 209, 165, 0.12); }
 .pchip.work { color: var(--accent); background: var(--accent-soft); }
