@@ -195,13 +195,13 @@ img { max-width: 100%; display: block; }
 }
 /* Editorial running heads + gold folio numerals. */
 .running-head {
-  display: inline-flex; align-items: baseline; gap: 12px;
+  display: inline-flex; align-items: baseline; gap: 10px;
   font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
 }
 .running-head .folio {
   color: var(--accent); letter-spacing: 0.08em; font-size: 0.8rem;
-  border-right: 1px solid rgba(212, 175, 55, 0.45); padding-right: 12px;
+  border-right: 1px solid rgba(212, 175, 55, 0.45); padding-right: 8px;
 }
 .section-head .running-head { margin-bottom: 18px; }
 .cta-band .running-head { display: inline-flex; margin-bottom: 14px; }
@@ -226,10 +226,10 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-mono); font-size: 0.78rem;
   min-width: 0;
 }
-.prow-t { color: var(--muted); }
-.prow-agent { color: var(--blue); font-weight: 600; }
-.prow-task { color: var(--muted); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pchip { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; }
+.prow-t { color: var(--muted); width: 44px; flex-shrink: 0; }
+.prow-agent { color: var(--blue); font-weight: 600; width: 96px; flex-shrink: 0; }
+.prow-task { color: var(--muted); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pchip { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; margin-left: auto; flex-shrink: 0; }
 .pchip.done { color: #7fd1a8; background: rgba(79, 209, 165, 0.12); }
 .pchip.work { color: var(--accent); background: var(--accent-soft); }
 .pchip.queue { color: var(--muted); background: rgba(154, 164, 185, 0.12); }
@@ -254,9 +254,6 @@ img { max-width: 100%; display: block; }
 .faq-item summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent); font-size: 1.05rem; }
 .faq-item[open] summary::after { content: "–"; }
 .faq-item p { color: var(--muted); line-height: 1.65; padding: 0 0 20px; max-width: 54ch; }
-
-.hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
-.hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
 .constellation .const-label { fill: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; }
 .constellation .nodes circle {
@@ -630,4 +627,24 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root),
   ::view-transition-new(root) { animation: none; }
+}
+
+/* ---------- Waitlist capture form ---------- */
+.waitlist-form { margin-top: 22px; max-width: 460px; }
+.waitlist-form .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.waitlist-form .wl-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.waitlist-form .wl-email {
+  flex: 1 1 220px; padding: 12px 14px; border-radius: 8px;
+  border: 1px solid var(--line, #2a3350); background: transparent;
+  color: inherit; font-family: var(--font-mono); font-size: 0.92rem;
+}
+.waitlist-form .wl-email:focus { outline: none; border-color: var(--accent, #d4af37); }
+.waitlist-form .wl-consent {
+  display: flex; gap: 8px; align-items: flex-start; margin-top: 10px;
+  font-size: 0.78rem; color: var(--muted); line-height: 1.5; cursor: pointer;
+}
+.waitlist-form .wl-consent input { margin-top: 2px; }
+.waitlist-form .wl-status {
+  margin: 10px 0 0; min-height: 1.2em;
+  font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent, #d4af37);
 }
