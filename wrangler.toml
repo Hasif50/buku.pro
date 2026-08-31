@@ -1,0 +1,7 @@
+name = "buku-pro"
+pages_build_output_dir = "."
+compatibility_date = "2026-08-24"
+
+[[kv_namespaces]]
+binding = "LEADS"
+id = "52330de6b4fd48b7b0dbdf8a9b465b53"
