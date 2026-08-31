@@ -378,6 +378,7 @@ img { max-width: 100%; display: block; }
 .footer-col a { display: block; color: var(--muted); font-size: 0.95rem; padding: 5px 0; }
 .footer-col a:hover { color: var(--ink); }
 .footer-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 0.86rem; }
+.colophon { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 16px; max-width: 36ch; }
 
 /* page hero — editorial, no starfield */
 .page-hero { padding: 96px 0 110px; position: relative; }
