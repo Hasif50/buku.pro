@@ -175,6 +175,14 @@
           <div>
 <h2>Bring AI agents into your clinic.</h2>
             <p>Create your clinic account in minutes — self-serve, live today. Questions? <a href="mailto:support@buku.pro">support@buku.pro</a></p>
+            <form id="leadForm" style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;max-width:440px;">
+              <input type="email" name="email" required placeholder="Work email"
+                style="flex:1;min-width:200px;padding:10px 12px;border-radius:8px;border:1px solid #2a3350;background:#0d1224;color:inherit;" />
+              <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"
+                style="position:absolute;left:-9999px;" />
+              <button class="btn btn-primary" type="submit">Keep me posted</button>
+            </form>
+            <p id="leadMsg" style="margin-top:8px;font-size:0.9rem;color:#8fd18f;display:none;"></p>
           </div>
           <a class="btn btn-primary btn-lg" href="https://dentalos.buku.pro/register?utm_source=buku.pro&amp;utm_medium=site&amp;utm_campaign=dentalos-launch">Get started</a>
         </div>
@@ -215,5 +223,36 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // Lead capture → bukubiz-gateway /leads (P2 lead directory).
+    (function () {
+      var form = document.getElementById("leadForm");
+      if (!form) return;
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var msg = document.getElementById("leadMsg");
+        var data = {
+          email: form.email.value,
+          website: form.website.value,
+          source: "buku.pro/dentalos",
+        };
+        try {
+          var res = await fetch("https://bukubiz-gateway.bukubiz.workers.dev/leads", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          form.style.display = "none";
+          msg.textContent = "Thanks — we'll be in touch at " + form.email.value + ".";
+          msg.style.display = "block";
+        } catch (err) {
+          msg.textContent = "Something went wrong — email support@buku.pro instead.";
+          msg.style.color = "#e08f8f";
+          msg.style.display = "block";
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
