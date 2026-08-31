@@ -300,6 +300,7 @@ img { max-width: 100%; display: block; }
 .section { padding: 96px 0; }
 .section-soft { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-head { max-width: 640px; margin-bottom: 44px; }
+.section-head .lead { max-width: 28rem; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head .lead { margin-top: 14px; }
 
@@ -346,7 +347,8 @@ img { max-width: 100%; display: block; }
 }
 .feature:hover { border-color: rgba(212, 175, 55, 0.5); transform: translateY(-3px); box-shadow: 0 16px 36px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(212, 175, 55, 0.14); }
 .feature .f-icon {
-  width: 42px; height: 42px; border-radius: 12px; background: var(--accent-soft); color: var(--accent);
+  width: 42px; height: 42px; border-radius: 12px;
+  background: #1a2133; border: 1px solid var(--line); color: var(--accent);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-mono); font-weight: 600; font-size: 0.9rem; margin-bottom: 16px;
 }
@@ -362,7 +364,7 @@ img { max-width: 100%; display: block; }
   position: relative; overflow: hidden;
 }
 .cta-band::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none; animation: twinkle 10s ease-in-out infinite;
+  content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(640px 280px at 82% 20%, rgba(212, 175, 55, 0.22), transparent 62%);
 }
 .cta-band h2 { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.01em; max-width: 520px; }
@@ -377,18 +379,8 @@ img { max-width: 100%; display: block; }
 .footer-col a:hover { color: var(--ink); }
 .footer-bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 0.86rem; }
 
-/* page hero */
-.page-hero { padding: 72px 0 60px; position: relative; overflow: hidden; }
-.page-hero::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none; animation: twinkle 10s ease-in-out infinite;
-  background:
-    radial-gradient(680px 380px at 80% 10%, rgba(111, 168, 220, 0.09), transparent 60%),
-    radial-gradient(520px 300px at 10% 90%, rgba(212, 175, 55, 0.08), transparent 60%),
-    radial-gradient(1.2px 1.2px at 25% 25%, rgba(255,255,255,0.8), transparent 50%),
-    radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.6), transparent 50%),
-    radial-gradient(1.3px 1.3px at 82% 70%, rgba(255,255,255,0.5), transparent 50%),
-    radial-gradient(1px 1px at 12% 70%, rgba(255,255,255,0.5), transparent 50%);
-}
+/* page hero — editorial, no starfield */
+.page-hero { padding: 96px 0 110px; position: relative; }
 .page-hero .container { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 
 /* reveal */
@@ -475,7 +467,6 @@ body::after {
 .constellation g line:nth-child(5) { animation-delay: 0.48s; }
 .constellation g line:nth-child(6) { animation-delay: 0.60s; }
 @keyframes draw-line { to { stroke-dashoffset: 0; } }
-@keyframes twinkle { 0%, 100% { opacity: 0.78; } 50% { opacity: 1; } }
 
 /* ---------- Department agent pages ---------- */
 .dept-hero { padding: 68px 0 36px; }
@@ -494,13 +485,13 @@ body::after {
 .cap { background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; transition: border-color .18s ease, transform .18s ease; }
 .cap:hover { border-color: var(--dept, var(--accent)); transform: translateY(-3px); }
 .cap h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; margin-bottom: 8px; }
-.cap p { color: var(--muted); font-size: 0.92rem; }
+.cap p { color: var(--muted); font-size: 0.92rem; max-width: 46ch; }
 .cap .risk { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dept, var(--accent)); margin-top: 14px; }
 .flow { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; margin-top: 22px; font-family: var(--font-mono); font-size: 0.76rem; }
 .flow .node { padding: 8px 13px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-soft); }
 .flow .node.self { border-color: var(--dept, var(--accent)); color: var(--dept, var(--accent)); font-weight: 600; }
 .flow .arrow { color: var(--muted); }
-.safety-note { background: rgba(224, 112, 90, 0.07); border-radius: 8px; padding: 10px 14px; color: var(--ink-soft); font-size: 0.9rem; margin-top: 18px; }
+.safety-note { background: rgba(224, 112, 90, 0.07); border-radius: 8px; padding: 10px 14px; color: var(--ink-soft); font-size: 0.9rem; margin-top: 18px; max-width: 28rem; }
 
 /* ---------- Illuminated Ledger: brand motion ---------- */
 
@@ -550,13 +541,6 @@ body::after {
 @keyframes gild-pulse {
   0%, 100% { opacity: 0.65; }
   50% { opacity: 1; }
-}
-
-/* Ambient starlight — twinkling, drifting stars behind the hero. */
-.starfield {
-  position: absolute; inset: 0; z-index: 0;
-  width: 100%; height: 100%;
-  display: block; pointer-events: none;
 }
 
 /* ---------- Scroll progress (gold hairline) ---------- */
