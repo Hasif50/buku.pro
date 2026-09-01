@@ -648,3 +648,27 @@ body::after {
   margin: 10px 0 0; min-height: 1.2em;
   font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent, #d4af37);
 }
+
+/* ---------- Blog: editorial chapters ---------- */
+.features--2 { grid-template-columns: repeat(2, 1fr); }
+.post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.post-card {
+  padding: 30px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: linear-gradient(180deg, #16203a, #101729);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.post-card:hover { border-color: var(--accent, #d4af37); transform: translateY(-2px); }
+.post-card .f-icon { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; color: var(--accent, #d4af37); }
+.post-card h3 { margin: 0; font-size: 1.15rem; }
+.post-card h3 a { color: inherit; text-decoration: none; }
+.post-card p { margin: 0; font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+.post-card .read-more { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent, #d4af37); margin-top: auto; }
+.post-hero { max-width: 72ch; margin: 0 auto 44px; }
+.post-meta { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin: 18px 0 0; }
+.prose { max-width: 72ch; margin: 0 auto; }
+.prose p { line-height: 1.85; margin: 0 0 1.5em; }
+.prose h2 { margin: 2.2em 0 0.8em; font-size: 1.35rem; }
+.prose h2::before { content: "\00a7"; color: var(--accent, #d4af37); margin-right: 10px; font-family: var(--font-mono); font-size: 0.85em; }
+.prose a { color: var(--accent, #d4af37); text-decoration: underline; text-underline-offset: 3px; }
