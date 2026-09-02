@@ -245,7 +245,10 @@
           });
           if (!res.ok) throw new Error("HTTP " + res.status);
           form.style.display = "none";
-          msg.textContent = "Thanks — we'll be in touch at " + form.email.value + ".";
+          var registerUrl = "https://dentalos.buku.pro/register?email=" + encodeURIComponent(form.email.value) +
+            "&utm_source=buku.pro&utm_medium=lead-form&utm_campaign=dentalos-launch";
+          msg.innerHTML = "Thanks — we'll be in touch at " + form.email.value +
+            ". Ready now? <a href=\"" + registerUrl + "\">Create your clinic →</a>";
           msg.style.display = "block";
         } catch (err) {
           msg.textContent = "Something went wrong — email support@buku.pro instead.";
