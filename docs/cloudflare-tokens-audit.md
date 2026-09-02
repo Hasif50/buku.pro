@@ -43,8 +43,9 @@ Until then, the **working deploy path is local wrangler** (authenticated on
 this machine): `npx wrangler@3.90.0 pages deploy . --project-name buku-pro
 --branch main` — verified working 2026-09-01.
 
-## Decision needed
+## Decision (2026-09-01)
 
-Either add the secrets (restores CI deploys) **or** delete/ignore the two CF
-workflows and keep local deploys as the canonical path. Keeping both without
-secrets leaves permanent red X's on every push.
+The buku.pro CF workflow is **disabled** (`.github/workflows/cloudflare-pages.yml.disabled`)
+until the secrets exist — local wrangler deploys are the canonical path and are
+verified working. To restore CI deploys: create the two GitHub secrets, rename
+the workflow back to `.yml`, and push.

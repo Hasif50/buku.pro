@@ -31,9 +31,10 @@
         });
         var data = await res.json();
         if (res.ok && data.ok) {
+          var at = data.position ? ' You\u2019re #' + String(data.position) + ' in line.' : '';
           status.textContent = data.alreadyExisted
-            ? "You're already on the list \u2014 we'll be in touch."
-            : "You're on the list. We'll be in touch.";
+            ? "You're already on the list." + at
+            : "You're on the list." + at + " We'll be in touch.";
           form.reset();
         } else {
           status.textContent = (data && data.error) || 'Something went wrong. Try again.';
