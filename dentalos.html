@@ -169,6 +169,58 @@
       </div>
     </section>
 
+    <section class="section section-soft" id="roi">
+      <div class="container">
+        <div class="section-head">
+          <span class="running-head"><span class="folio">06</span>Chapter &middot; The math</span>
+          <h2 class="h2 ink">What are missed calls costing you?</h2>
+          <p class="lead">Industry studies estimate roughly a third of calls to dental practices go unanswered — and most callers never call back. Move the sliders. The math is yours, not ours.</p>
+        </div>
+        <div class="roi-grid">
+          <div class="roi-inputs">
+            <label class="roi-field">
+              <span>Missed calls per week</span>
+              <input type="range" id="roiMissed" min="1" max="50" value="10" step="1" />
+              <output id="roiMissedOut">10</output>
+            </label>
+            <label class="roi-field">
+              <span>Average treatment value (RM)</span>
+              <input type="range" id="roiValue" min="100" max="2000" value="400" step="50" />
+              <output id="roiValueOut">RM 400</output>
+            </label>
+            <label class="roi-field">
+              <span>Calls your agents could recover</span>
+              <input type="range" id="roiRecover" min="20" max="80" value="50" step="5" />
+              <output id="roiRecoverOut">50%</output>
+            </label>
+            <p class="roi-note">Conservative model: recovered calls &times; your average treatment value, monthly and annualised. No-show reduction and WhatsApp recall add on top — we left those out so the number stays honest.</p>
+          </div>
+          <div class="roi-out">
+            <div class="roi-figure"><span class="roi-label">Recovered bookings / month</span><span class="roi-num" id="roiBookings">87</span></div>
+            <div class="roi-figure"><span class="roi-label">Recovered revenue / month</span><span class="roi-num" id="roiMonthly">RM 34,640</span></div>
+            <div class="roi-figure roi-annual"><span class="roi-label">Annualised</span><span class="roi-num" id="roiAnnual">RM 415,680</span></div>
+            <a class="btn btn-primary roi-cta" href="https://dentalos.buku.pro/register?utm_source=buku.pro&amp;utm_medium=roi-calculator&amp;utm_campaign=dentalos-launch">Start recovering them</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .roi-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+      @media(max-width:820px){.roi-grid{grid-template-columns:1fr}}
+      .roi-field{display:block;margin-bottom:18px}
+      .roi-field span{display:block;font-size:.85rem;color:#8a93ad;margin-bottom:6px}
+      .roi-field output{float:right;color:#d4af37;font-weight:600}
+      .roi-field input[type=range]{width:100%;accent-color:#d4af37}
+      .roi-note{font-size:.8rem;color:#8a93ad;line-height:1.5}
+      .roi-out{background:#0d1224;border:1px solid #2a3350;border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:16px}
+      .roi-figure{display:flex;flex-direction:column}
+      .roi-label{font-size:.78rem;color:#8a93ad;text-transform:uppercase;letter-spacing:.06em}
+      .roi-num{font-size:1.7rem;font-weight:700;color:#e8ecf5}
+      .roi-annual .roi-num{color:#d4af37}
+      .roi-cta{margin-top:6px;text-align:center}
+    </style>
+
     <section class="section" id="get-started">
       <div class="container">
         <div class="cta-band reveal">
@@ -224,6 +276,32 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // ROI calculator — live, client-side, conservative model.
+    (function () {
+      var missed = document.getElementById("roiMissed");
+      if (!missed) return; // section not on this page
+      var value = document.getElementById("roiValue");
+      var recover = document.getElementById("roiRecover");
+      var fmt = function (n) { return "RM " + Math.round(n).toLocaleString("en-MY"); };
+      function compute() {
+        var m = parseInt(missed.value, 10);
+        var v = parseInt(value.value, 10);
+        var r = parseInt(recover.value, 10) / 100;
+        var missedMo = m * 4.33;
+        var bookings = Math.round(missedMo * r);
+        var monthly = missedMo * r * v;
+        document.getElementById("roiMissedOut").textContent = m;
+        document.getElementById("roiValueOut").textContent = "RM " + v.toLocaleString("en-MY");
+        document.getElementById("roiRecoverOut").textContent = recover.value + "%";
+        document.getElementById("roiBookings").textContent = bookings.toLocaleString("en-MY");
+        document.getElementById("roiMonthly").textContent = fmt(monthly);
+        document.getElementById("roiAnnual").textContent = fmt(monthly * 12);
+      }
+      [missed, value, recover].forEach(function (el) { el.addEventListener("input", compute); });
+      compute();
+    })();
+  </script>
   <script>
     // Lead capture → bukubiz-gateway /leads (P2 lead directory).
     (function () {
