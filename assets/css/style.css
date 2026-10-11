@@ -672,3 +672,11 @@ body::after {
 .prose h2 { margin: 2.2em 0 0.8em; font-size: 1.35rem; }
 .prose h2::before { content: "\00a7"; color: var(--accent, #d4af37); margin-right: 10px; font-family: var(--font-mono); font-size: 0.85em; }
 .prose a { color: var(--accent, #d4af37); text-decoration: underline; text-underline-offset: 3px; }
+
+/* .features--2 and .post-grid are defined after the shared responsive block,
+   so their repeat(2, 1fr) wins the cascade over it. Collapse them here at the
+   same 560px breakpoint the other card grids use; with min-width:auto items a
+   1fr track bottoms out at the cards' min-content and overflows the viewport. */
+@media (max-width: 560px) {
+  .features--2, .post-grid { grid-template-columns: 1fr; }
+}
