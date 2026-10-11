@@ -680,3 +680,10 @@ body::after {
 @media (max-width: 560px) {
   .features--2, .post-grid { grid-template-columns: 1fr; }
 }
+/* A nowrap button gives its card an unbreakable min-content floor (the
+   "Join the beta waitlist" CTA alone is 223px). Below 380px let card CTAs
+   wrap so a long label can never push a card past the viewport. A button
+   with room keeps one line, so nothing changes above that width. */
+@media (max-width: 380px) {
+  .features .btn { white-space: normal; }
+}
