@@ -77,6 +77,7 @@ async function staticChecks(failures) {
   const emdash = {};
   const mdashEntity = {};
   const ndashEntity = {};
+  const doctype = {};
   const links = { checked: 0, broken: [] };
   const headMeta = {};
 
@@ -109,6 +110,13 @@ async function staticChecks(failures) {
       failures.push({ check: 'mdash-entity', page, detail: `${mdashEntity[page]} em-dash entity occurrence(s) (order 4: none allowed)` });
     }
     ndashEntity[page] = countMatches(html, /&(?:ndash|#0*8211|#x0*2013);?/gi);
+
+    // Exactly one <!DOCTYPE html> per page; a doubled declaration (seen in
+    // concatenated blog files) breaks parsing modes.
+    doctype[page] = countMatches(html, /<!doctype[ \t]+html/gi);
+    if (doctype[page] !== 1) {
+      failures.push({ check: 'doctype', page, detail: `${doctype[page]} <!DOCTYPE html> declaration(s) (expected exactly 1)` });
+    }
 
     const dir = path.posix.dirname(page);
     const attrRe = /\b(href|src)\s*=\s*"([^"]*)"/gi;
@@ -169,7 +177,7 @@ async function staticChecks(failures) {
     failures.push({ check: 'sitemap', page: 'sitemap.xml', detail: 'sitemap.xml missing' });
   }
 
-  return { mojibake, mojibakeOther, emdash, mdashEntity, ndashEntity, links, sitemap, headMeta };
+  return { mojibake, mojibakeOther, emdash, mdashEntity, ndashEntity, doctype, links, sitemap, headMeta };
 }
 
 async function browserChecks(baseUrl, outDir, failures) {
@@ -269,11 +277,11 @@ function renderSummary(report) {
   lines.push('Mojibake sequences per file (classes: double-encoded em-dash, middot, times, divide, U+FFFD). Error-class when > 0.');
   lines.push('');
   lines.push('```');
-  lines.push(table([['page', 'mojibake', 'other mojibake-like (info only)', 'em-dash U+2014 (raw census)', 'mdash entity (error)', 'ndash entity (info)']]
-    .concat(PAGES.map((p) => [p, report.static.mojibake[p] ?? '-', report.static.mojibakeOther?.[p] ?? '-', report.static.emdash[p] ?? '-', report.static.mdashEntity?.[p] ?? '-', report.static.ndashEntity?.[p] ?? '-']))));
+  lines.push(table([['page', 'mojibake', 'other mojibake-like (info only)', 'em-dash U+2014 (raw census)', 'mdash entity (error)', 'ndash entity (info)', 'doctype count (must be 1)']]
+    .concat(PAGES.map((p) => [p, report.static.mojibake[p] ?? '-', report.static.mojibakeOther?.[p] ?? '-', report.static.emdash[p] ?? '-', report.static.mdashEntity?.[p] ?? '-', report.static.ndashEntity?.[p] ?? '-', report.static.doctype?.[p] ?? '-']))));
   lines.push('```');
   lines.push('');
-  lines.push(`Totals: mojibake ${report.totals.mojibake}, em-dash ${report.totals.emdash}, mdash entity ${report.totals.mdashEntity}, ndash entity ${report.totals.ndashEntity} (info). The em-dash figure is a raw U+2014 census and includes the U+2014 inside the mojibake sequence U+00C3 U+2014 (visible in bukubiz-hr and bukubiz-sales counts). The mdash-entity figure counts &mdash;/&#8212;/&#x2014; spellings that render as em-dashes but evade the raw census.`);
+  lines.push(`Totals: mojibake ${report.totals.mojibake}, em-dash ${report.totals.emdash}, mdash entity ${report.totals.mdashEntity}, ndash entity ${report.totals.ndashEntity} (info), doctype declarations ${report.totals.doctypeDeclarations} across ${PAGES.length} pages. The em-dash figure is a raw U+2014 census and includes the U+2014 inside the mojibake sequence U+00C3 U+2014 (visible in bukubiz-hr and bukubiz-sales counts). The mdash-entity figure counts &mdash;/&#8212;/&#x2014; spellings that render as em-dashes but evade the raw census. A doctype count other than 1 is an error.`);
   lines.push('');
   lines.push('Note: headless Chromium does not fetch /favicon.ico, so console errors here are real failed resource loads, not favicon noise.');
   lines.push('');
@@ -339,6 +347,7 @@ const report = {
     emdash: sum(staticResults.emdash),
     mdashEntity: sum(staticResults.mdashEntity),
     ndashEntity: sum(staticResults.ndashEntity),
+    doctypeDeclarations: sum(staticResults.doctype),
     brokenLinks: staticResults.links.broken.length,
     consoleErrors: sum(Object.fromEntries(PAGES.map((p) => [p, VIEWPORTS.reduce((a, w) => a + (browserResults.pages[p]?.[w]?.consoleErrors.length ?? 0), 0)]))),
     pageErrors: sum(Object.fromEntries(PAGES.map((p) => [p, VIEWPORTS.reduce((a, w) => a + (browserResults.pages[p]?.[w]?.pageErrors.length ?? 0), 0)]))),
