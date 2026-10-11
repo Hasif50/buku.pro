@@ -16,6 +16,7 @@ const PAGES = [
   'index.html', 'bukubiz.html', 'bukubiz-admin.html', 'bukubiz-finance.html',
   'bukubiz-hr.html', 'bukubiz-marketing.html', 'bukubiz-operations.html',
   'bukubiz-sales.html', 'dentalos.html', 'mybuku.html',
+  'privacy.html', 'terms.html',
   'blog/index.html', 'blog/buku-pro-suite.html',
   'blog/family-budgeting-malaysia.html', 'blog/myr-expense-tracker-malaysia.html',
 ];
